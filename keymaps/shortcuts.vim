@@ -31,7 +31,7 @@ nmap <silent> <C-t> :tabnew<CR>
 " Delete buffer
 nmap <C-w> :bdelete<CR>
 " View opened buffers
-nnoremap <silent> <leader>bb  :Buffers<CR>
+nnoremap <silent> <leader>bb :Buffers<CR>
 
 " Resize splits
 nnoremap <silent> <S-l> :vertical resize +5<CR>
@@ -47,11 +47,5 @@ nmap <silent> gt <plug>(coc-type-definition)
 nmap <silent> gh <Plug>(coc-implementation)
 nmap <silent> gb <Plug>(coc-references)
 
-" Minimap toggleable
-nmap <leader>mm :MinimapToggle<CR>
-
-" Rainbow brackets
-nmap <leader>rr :RainbowToggle<CR>
-
 " Minimazer
-nmap <leader>ff :MaximizerToggle!<CR>
+nmap <leader>f :MaximizerToggle!<CR>
