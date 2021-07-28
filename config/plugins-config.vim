@@ -82,27 +82,13 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile)
 " Fzf appareance
 let g:fzf_layout = { 'window': { 'width': 0.6, 'height': 0.5, 'relative': v:true, 'yoffset': -1 } }
 
-" Minimap 
-let g:minimap_toggle='<leader>mm'
-let g:minimap_highlight='Visual'
-
 " Polyglot
 let g:polyglot_disabled = ['markdown']
 
 " ALE lint config
 let g:ale_completation_autoimport = 1
 let g:ale_completion_enable = 1
-
-" Rainbow bracketslet g:rainbow_active = 1
-let g:rainbow_load_separately = [
-\ [ '*' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
-\ [ '*.tex' , [['(', ')'], ['\[', '\]']] ],
-\ [ '*.cpp' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
-\ [ '*.{html,htm}' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<\a[^>]*>', '</[^>]*>']] ],
-\ ]
-let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
-let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
-
+" ALE + lightline
 let g:lightline#ale#indicator_checking = "\uf110"
 let g:lightline#ale#indicator_infos = "\uf129"
 let g:lightline#ale#indicator_warnings = "\uf071"
