@@ -24,9 +24,9 @@ nmap <leader>q :q<CR>
 nmap <leader>wq :x<CR>
 noremap <leader>0 :so%<CR>
 
-" Move between tabs 
-nnoremap <silent> <A-2> :tabnext<CR>
-nnoremap <silent> <A-1> :tabprevious<CR>
+" Move between buffers 
+nnoremap <silent> <A-2> :bnext<CR>
+nnoremap <silent> <A-1> :bprevious<CR>
 nmap <silent> <C-t> :tabnew<CR>
 " Delete buffer
 nmap <C-w> :bdelete<CR>
