@@ -1,0 +1,17 @@
+{
+  "suggest.noselect": false,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "json",
+    "javascriptreact",
+    "typescript.tsx",
+    "html",
+    "xml",
+    "css",
+    "cpp",
+    "cc",
+    "c",
+    "java",
+    "python"
+  ]
+}
