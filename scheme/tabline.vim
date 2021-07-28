@@ -9,7 +9,7 @@ function! FiletypeIcon()
 endfunction
 
 function! SetTabline()
-    let tabline = "   "
+    let tabline = "  "
     let tabline .= "%#TablineFiletype#"
     let tabline .= "%#TablineFiletypeIcon#%{FiletypeIcon()}"
     let tabline .= " %#TablineFiletypeBody# %f %M"
