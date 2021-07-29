@@ -3,6 +3,8 @@ This is my onw nvim folder configuration, I hope u like it or can resolve ur iss
 
 ## Preview
 
+![](https://github.com/sssimxn/NVim4Win/blob/master/previuw.png)
+
 ## Requirements
 
 1. [Git](https://git-scm.com/downloads)
