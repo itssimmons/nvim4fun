@@ -6,7 +6,7 @@ if exists('+termguicolors')
     set termguicolors          
 endif                         
 
-colorscheme spaceduck          
+colorscheme spaceduck
 set encoding=utf-8
 set lbr
 set tw=500
@@ -58,5 +58,5 @@ syntime on
 syntax on
 set synmaxcol=128
 syntax sync minlines=256
-nnoremap <silent> <leader>cc :set cursorline!<CR>
-nnoremap <silent> <leader>rr :set relativenumber!<CR>
+nnoremap <silent> <leader>cl :set cursorline!<CR>
+nnoremap <silent> <leader>nr :set relativenumber!<CR>
