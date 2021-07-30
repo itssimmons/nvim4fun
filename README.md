@@ -3,7 +3,7 @@ This is my onw nvim folder configuration, I hope u like it or can resolve ur iss
 
 ## Preview
 
-![](https://github.com/sssimxn/NVim4Win/blob/master/previuw.png)
+![](https://github.com/sssimxn/Neovim4Win/blob/master/preview.png)
 
 ## Requirements
 
@@ -24,12 +24,8 @@ All u have to do, is install Python from the Windows Store
 2. pynvim provider not found:
 Change `> pip3 install pynvim` for `> pip install pynvim` that works for me "haved only Python3 installed" ;)
 
-## Quick Start
-
-Just
-```bash
-$ git clone https://github.com/sssimxn/NVim4Win.git
-```
+3. If the tab looks weird:
+You can wrap it into a function and then calls it on your theme.vim (preferably into your own theme) 
 
 ## Custom Shortcuts
 
@@ -42,10 +38,9 @@ Vim
 
 > Alt + 2: Next buffer
 > Alt + 1: Prev Buffer
+> Ctrl + w: Delete buffer
 
 > Ctrl + t: New tab
-
-> Ctrl + w: Delete buffer
 
 > leader + bb: View opened buffers
 
@@ -72,6 +67,8 @@ CoC
 > gh: Go to implementation
 > gb: Go to reference
 
+> Z: Show documentation
+
 Vim Move
 > Alt + k: Move current line/selection up
 > Alt + j: Move current line/selection down
@@ -80,6 +77,20 @@ Vim Move
 
 Maximizer
 > leader + f: Maximize cursor window
+
+Git gutter
+> ): Next hunk
+> (: Previous hunk
+> leader + gg: Toggle git gutter
+
+Vim inspector
+> F5: Run
+> F9: Breakpoint
+
+> ff: Launch 
+> fx: Reset
+> fc: Eval
+> fv: Watch
 
 Extra shortcuts (for fix lag)
 > leader + cc: Toggle cursorline
