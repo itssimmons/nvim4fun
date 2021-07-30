@@ -5,45 +5,47 @@ if exists('+termguicolors')
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
     set termguicolors          
 endif                         
-
-colorscheme spaceduck
-set encoding=utf-8
-set lbr
-set tw=500
-set history=500
-
 set nocompatible
-set foldcolumn=0
-
-set noerrorbells
-set novisualbell
-set t_vb=
-set tm=400
-
-set t_Co=256
+set updatetime=600
+set nobackup
+set nowritebackup
+set noswapfile
 
 set showtabline=2
 set noshowmode
-set laststatus=2
-set showcmd
+set autoindent
+set encoding=UTF-8
+set t_Co=256
+colorscheme lucid 
+set history=100
 
-set mouse=a
-set clipboard=unnamed
-
-"set cursorline
-set number
-"set relativenumber
-"set showmatch
-
+" Tabbing to 4
 set list
 set listchars=tab:\│\ 
 set tabstop=4
 set shiftwidth=4
 
-set updatetime=600
-set nobackup
-set nowritebackup
-set noswapfile
+" Basics
+set nowrap
+set cursorline
+set number
+set mouse=a
+set clipboard=unnamed
+
+" No errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+set laststatus=2
+set showcmd
+set lbr
+set tw=500
+
+set ignorecase
+set smartcase
+set splitright splitbelow
+set guicursor=
 
 " Reducing lag
 set regexpengine=1
