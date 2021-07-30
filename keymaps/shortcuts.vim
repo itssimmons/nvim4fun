@@ -53,7 +53,7 @@ nmap <C-Up> :MaximizerToggle!<CR>
 " Git Gutter
 nnoremap ) <Plug>(GitGutterNextHunk)
 nnoremap ( <Plug>(GitGutterPrevHunk)
-nmap <leader>gg :GitGutterLineHighlightEnable<CR>
+nmap <leader>gg :GitGutterToggle<CR>
 
 " VimInspector
 nmap ff :call vimspector#Launch()<CR>
