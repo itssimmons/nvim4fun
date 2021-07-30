@@ -3,8 +3,8 @@
 let mapleader = " "
 
 " Search 
-nnoremap <C-ñ> :Rg<CR>
-nnoremap <C-p> :FZF<CR>
+nnoremap <C-i> :Rg<CR>
+nnoremap <C-p> :Files<CR>
 
 " Toggle tree
 nmap <leader>n :NERDTreeToggle<CR>
@@ -48,4 +48,16 @@ nmap <silent> gh <Plug>(coc-implementation)
 nmap <silent> gb <Plug>(coc-references)
 
 " Minimazer
-nmap <leader>f :MaximizerToggle!<CR>
+nmap <C-Up> :MaximizerToggle!<CR>
+
+" Git Gutter
+nnoremap ) <Plug>(GitGutterNextHunk)
+nnoremap ( <Plug>(GitGutterPrevHunk)
+nmap <leader>gg :GitGutterLineHighlightEnable<CR>
+
+" VimInspector
+nmap ff :call vimspector#Launch()<CR>
+nmap fx :VimspectorReset<CR>
+nmap fc :VimspectorEval
+nmap fv :VimspectorWatch
+autocmd Filetype nmap ff :CocCommand java.debug.vimspector.start<CR>
