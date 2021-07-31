@@ -49,7 +49,6 @@ call plug#end()
 
 " ---> Sources <---
 " ..config/
-source $HOME\AppData\Local\nvim\config\coc-marketplace.vim
 source $HOME\AppData\Local\nvim\config\plugs-config.vim
 source $HOME\AppData\Local\nvim\config\settings.vim
 " ../colors
@@ -61,7 +60,3 @@ source $HOME\AppData\Local\nvim\keymaps\shortcuts.vim
 " ../
 source $HOME\AppData\Local\nvim\mini.vim
 " ---> Sources <---
-
-highlight Normal ctermbg=NONE
-highlight nonText ctermbg=NONE
-highlight clear LineNr
