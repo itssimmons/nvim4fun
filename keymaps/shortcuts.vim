@@ -15,8 +15,8 @@ vmap ++ <plug>NERDCommenterToggle
 " Move code blocks/identation
 xnoremap <A-k> :move '<-2<CR>gv-gv
 xnoremap <A-j> :move '>+1<CR>gv-gv
-vnoremap <A-h> < <gv
-vnoremap <A-l> > >gv
+vnoremap <A-h> <gv
+vnoremap <A-l> >gv
 
 " Save & Close
 nmap <C-s> :w<CR>
