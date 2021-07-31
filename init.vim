@@ -35,7 +35,6 @@ Plug 'christoomey/vim-tmux-navigator'
 " Erros, Comment n Move lines
 Plug 'dense-analysis/ale'                                               
 Plug 'scrooloose/nerdcommenter'                                         
-Plug 'matze/vim-move'                                                   
 " Git
 Plug 'airblade/vim-gitgutter'                                           
 Plug 'itchyny/vim-gitbranch'                                            
