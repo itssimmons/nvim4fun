@@ -1,7 +1,6 @@
 " Custom tabline 
 " (Based on 'https://github.com/probe2k/bspwm_rice/blob/master/nvim/config/tabline.vim')
 function! CustomTabline()
-	if exists("+showtabline")
 	
 		hi TablineFiletype          cterm=none   gui=none   ctermbg=none ctermfg=5 guibg=none    guifg=#db0088
 		hi TablineFiletypeIcon      cterm=none   gui=none   ctermbg=5    ctermfg=0 guibg=#db0088 guifg=#0f0c14
@@ -14,7 +13,7 @@ function! CustomTabline()
 
 		function! SetTabline()
     		let tabline = ""
-    		let tabline .= "%#TablineFiletype#  "
+    		let tabline .= "%#TablineFiletype# "
     		let tabline .= "%#TablineFiletypeIcon#%{FiletypeIcon()}"
     		let tabline .= "%#TablineFiletypeBody# %f %M"
     		let tabline .= "%#TablineFiletypeSeparator#\ "
@@ -23,5 +22,4 @@ function! CustomTabline()
 
 		setlocal tabline=%!SetTabline()
 
-	endif
 endfunction

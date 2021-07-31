@@ -9,7 +9,7 @@ let g:lightline = {
 \  'right': [[]]
 \  },
 \ 'component': {
-\  'inactive': 'inactive',
+\  'inactive': 'inactive'
 \  },
 \ 'component_function': {
 \  'myfiletype': 'MyFiletype',
@@ -22,8 +22,8 @@ let g:lightline = {
 \ },
 \ 'colorscheme': 'lucid',
 \ 'subseparator': {
-\  'left': ' ',
-\  'right': ' '
+\  'left': '',
+\  'right': ''
 \  }
 \ }
 
