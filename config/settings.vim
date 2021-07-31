@@ -17,7 +17,7 @@ set autoindent
 set encoding=UTF-8
 set t_Co=256
 colorscheme lucid 
-set history=100
+set history=50
 
 " Tabbing to 4
 set list

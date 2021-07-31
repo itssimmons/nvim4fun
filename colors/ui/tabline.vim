@@ -8,7 +8,7 @@ function! CustomTabline()
 		hi TablineFiletypeSeparator cterm=none   gui=none   ctermbg=none ctermfg=8 guibg=none    guifg=#181320
 
 		function! FiletypeIcon()
-    		return winwidth(0) > 10 ? (strlen(&filetype) ? WebDevIconsGetFileTypeSymbol() . '  ' : ' ') : ''
+    		return winwidth(0) > 70 ? (strlen(&filetype) ? WebDevIconsGetFileTypeSymbol() . ' ' : ' ') : ''
 		endfunction
 
 		function! SetTabline()

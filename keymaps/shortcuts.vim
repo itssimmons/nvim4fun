@@ -2,15 +2,18 @@
 
 let mapleader = " "
 
-" Search 
-nnoremap <C-i> :Rg<CR>
-nnoremap <C-p> :Files<CR>
+" Save & Close
+nmap <C-s> :w<CR>
+nmap <leader>q :q<CR>
+nmap <leader>wq :x<CR>
+nmap <leader>0 :so%<CR>
 
-" Toggle tree
-nmap <leader>n :NERDTreeToggle<CR>
-" Comment
-nmap ++ <plug>NERDCommenterToggle
-vmap ++ <plug>NERDCommenterToggle
+" Move between buffers 
+nmap <silent> <A-2> :bnext<CR>
+nmap <silent> <A-1> :bprevious<CR>
+" Buffer management
+nmap <C-t> :e 
+nmap <C-w> :bdelete<CR>
 
 " Move code blocks/identation
 xnoremap <A-k> :move '<-2<CR>gv-gv
@@ -18,41 +21,42 @@ xnoremap <A-j> :move '>+1<CR>gv-gv
 vnoremap <A-h> <gv
 vnoremap <A-l> >gv
 
-" Save & Close
-nmap <C-s> :w<CR>
-nmap <leader>q :q<CR>
-nmap <leader>wq :x<CR>
-noremap <leader>0 :so%<CR>
-
-" Move between buffers 
-nnoremap <silent> <A-2> :bnext<CR>
-nnoremap <silent> <A-1> :bprevious<CR>
-nmap <silent> <C-t> :tabnew<CR>
-" Delete buffer
-nmap <C-w> :bdelete<CR>
-" View opened buffers
-nnoremap <silent> <leader>bb :Buffers<CR>
-
 " Resize splits
 nnoremap <silent> <S-l> :vertical resize +5<CR>
 nnoremap <silent> <S-h> :vertical resize -5<CR>
 nnoremap <silent> <S-k> :resize +5<CR>
 nnoremap <silent> <S-j> :resize -5<CR>
 
-" Rename current word
-nmap <silent> <A-F2> <Plug>(coc-rename)
-" Gotos
+" Split
+nmap <silent> <C-Up> :vsplit<CR>
+nmap <silent> <C-Right> :split<CR>
+
+" Nerdtree
+nmap <leader>n :NERDTreeToggle<CR>
+" Nerdtree comment
+nmap ++ <plug>NERDCommenterToggle
+vmap ++ <plug>NERDCommenterToggle
+
+" FZF
+nmap <C-i> :Rg<CR>
+nmap <C-p> :Files<CR>
+" View opened buffers
+nmap <silent> <leader>bb :Buffers<CR>
+
+" Coc Gotos
 nmap <silent> gf <Plug>(coc-definition)
 nmap <silent> gt <plug>(coc-type-definition)
 nmap <silent> gh <Plug>(coc-implementation)
 nmap <silent> gb <Plug>(coc-references)
+" Coc rename
+nmap <silent> <A-F2> <Plug>(coc-rename)
 
 " Minimazer
-nmap <C-Up> :MaximizerToggle!<CR>
+nmap <leader>mm :MaximizerToggle!<CR>
 
 " Git Gutter
-nnoremap ) <Plug>(GitGutterNextHunk)
-nnoremap ( <Plug>(GitGutterPrevHunk)
+nnoremap ] <Plug>(GitGutterNextHunk)
+nnoremap [ <Plug>(GitGutterPrevHunk)
 nmap <leader>gg :GitGutterToggle<CR>
 
 " VimInspector

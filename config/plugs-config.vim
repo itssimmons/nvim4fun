@@ -36,7 +36,6 @@ let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
 let g:DevIconsDefaultFolderOpenSymbol = ''
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 " Devicons custom config config
-let g:webdevicons_enable_nerdtree = 1
 let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 let g:WebDevIconsNerdTreeBeforeGlyphPadding = ''
 let g:webdevicons_conceal_nerdtree_brackets = 1
