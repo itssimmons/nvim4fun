@@ -1,15 +1,15 @@
 let g:lightline = {
 \ 'enable': { 'statusline': 1, 'tabline': 0 }, 
 \ 'active': { 
-\  'left': [['mode', 'paste'], ['linter_errors', 'linter_warnings', 'linter_ok'], ['gitbranch']],
-\  'right': [['myfiletype'], ['lineinfo', 'percent']]
+\  'left': [['mode', 'paste'], ['linter_errors', 'linter_warnings', 'linter_ok']],
+\  'right': [['myfiletype'], ['lineinfo', 'percent'], ['gitbranch']]
 \  },
 \ 'inactive': {
 \  'left': [['inactive']],
 \  'right': [[]]
 \  },
 \ 'component': {
-\  'inactive': 'inactive'
+\  'inactive': 'inactive',
 \  },
 \ 'component_function': {
 \  'myfiletype': 'MyFiletype',
@@ -43,5 +43,5 @@ let g:lightline.mode_map = {
 \ }
 
 function! MyFiletype()
-    return winwidth(0) > 70 ? (strlen(&filetype) ? WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+    return winwidth(0) > 10 ? (strlen(&filetype) ? WebDevIconsGetFileTypeSymbol() : ' ') : ''
  endfunction

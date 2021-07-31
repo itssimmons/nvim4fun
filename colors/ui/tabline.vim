@@ -1,5 +1,5 @@
 " Custom tabline 
-" (Based on 'https://github.com/probe2k/bspwm_rice/tree/master/nvim')
+" (Based on 'https://github.com/probe2k/bspwm_rice/blob/master/nvim/config/tabline.vim')
 function! CustomTabline()
 	if exists("+showtabline")
 	
@@ -9,7 +9,7 @@ function! CustomTabline()
 		hi TablineFiletypeSeparator cterm=none   gui=none   ctermbg=none ctermfg=8 guibg=none    guifg=#181320
 
 		function! FiletypeIcon()
-    		return winwidth(0) > 10 ? (strlen(&filetype) ? WebDevIconsGetFileTypeSymbol() . ' ' : ' ') : ''
+    		return winwidth(0) > 10 ? (strlen(&filetype) ? WebDevIconsGetFileTypeSymbol() . '  ' : ' ') : ''
 		endfunction
 
 		function! SetTabline()
