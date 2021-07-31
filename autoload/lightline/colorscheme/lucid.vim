@@ -28,9 +28,9 @@ let s:p.replace.right = [ [ s:pink, s:black ], [ s:black, s:red ] ]
 let s:p.inactive.left =  [ [ s:pink, s:black ], [ s:white, s:black ] ]
 let s:p.inactive.middle = [ [ s:black, s:black ] ]
 let s:p.inactive.right = [ [ s:white, s:pink ], [ s:pink, s:black ] ]
-"let s:p.tabline.left = [ [ s:pink, s:black ] ]
-"let s:p.tabline.middle = [ [ s:pink, s:black] ]
-"let s:p.tabline.right = copy(s:p.normal.right)
-"let s:p.tabline.tabsel = [ [ s:black, s:pink ] ]
+let s:p.tabline.left = [ [ s:pink, s:black ] ]
+let s:p.tabline.middle = [ [ s:pink, s:black] ]
+let s:p.tabline.right = copy(s:p.normal.right)
+let s:p.tabline.tabsel = [ [ s:black, s:pink ] ]
 
 let g:lightline#colorscheme#lucid#palette = lightline#colorscheme#flatten(s:p)
