@@ -21,8 +21,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'                                           
 " Highlight n wrap 
 Plug 'tpope/vim-surround'                                               
-let g:polyglot_disabled = []
-Plug 'sheerun/vim-polyglot'                                             
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
 " Nerdtree
 Plug 'scrooloose/nerdtree'                                              
 Plug 'ryanoasis/vim-devicons'                                           
