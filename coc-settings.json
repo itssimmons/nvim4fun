@@ -1,18 +1,28 @@
 {
-  "suggest.noselect": false,
-  "coc.preferences.formatOnSaveFiletypes": [
-    "javascript",
-    "json",
-    "javascriptreact",
-    "typescript.tsx",
-    "html",
-	"xhtml",
-    "xml",
-    "css",
-    "cpp",
-    "cc",
-    "c",
-    "java",
-    "python"
-  ]
+	"suggest.floatEnable": true,        
+	"suggest.enablePreview": false,
+	"suggest.noselect": false,
+	"coc.preferences.formatOnType": true,
+	"coc.preferences.formatOnSaveFiletypes": [
+		"javascript",
+		"json",
+		"javascriptreact",
+		"typescript.tsx",
+		"css",
+		"html",
+		"xhtml",
+		"xml",
+		"python"
+	],
+	"prettier.printWidth": 100,
+	"prettier.tabWidth": 4,
+	"prettier.singleQuote": true,
+	"prettier.trailingComma": "es5",
+	"prettier.bracketSpacing": true,
+	"prettier.jsxBracketSameLine": false,
+	"prettier.parser": "flow",
+	"prettier.semi": false,
+	"prettier.useTabs": true,
+	"prettier.proseWrap": "preserve",
+	"prettier.arrowParens": "avoid"
 }
