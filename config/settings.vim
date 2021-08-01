@@ -60,5 +60,5 @@ syntime on
 syntax on
 set synmaxcol=128
 syntax sync minlines=256
-nnoremap <silent> <leader>cl :set cursorline!<CR>
-nnoremap <silent> <leader>nr :set relativenumber!<CR>
+nnoremap +- :set cursorline!<CR>
+nnoremap -+ :set relativenumber!<CR>
