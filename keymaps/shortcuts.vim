@@ -55,9 +55,9 @@ nmap <silent> <A-F2> <Plug>(coc-rename)
 nmap <leader>mm :MaximizerToggle!<CR>
 
 " Git Gutter
-nnoremap ] <Plug>(GitGutterNextHunk)
-nnoremap [ <Plug>(GitGutterPrevHunk)
-nmap <leader>gg :GitGutterToggle<CR>
+nnoremap <leader>kk :GitGutterNextHunk<CR>
+nnoremap <leader>jj :GitGutterPrevHunk<CR>
+nmap <leader>[ <Plug>(GitGutterPreviewHunk)
 
 " VimInspector
 nmap ff :call vimspector#Launch()<CR>
