@@ -48,15 +48,26 @@ nmap <silent> gf <Plug>(coc-definition)
 nmap <silent> gt <plug>(coc-type-definition)
 nmap <silent> gh <Plug>(coc-implementation)
 nmap <silent> gb <Plug>(coc-references)
-" Coc rename
-nmap <silent> <A-F2> <Plug>(coc-rename)
+" Coc n Vim rename
+let fts = ['vim']
+for i in fts
+	if (&filetype == i)
+		" only in the current file :(
+		nnoremap <F1> :%s/<c-r><c-w>/<c-r><c-w>/gc<c-f>$F/i
+	else
+		nnoremap <F1> <Plug>(coc-rename)
+	endif
+endfor
 
 " Minimazer
 nmap <leader>mm :MaximizerToggle!<CR>
 
 " Git Gutter
-nnoremap <leader>kk :GitGutterNextHunk<CR>
-nnoremap <leader>jj :GitGutterPrevHunk<CR>
+" Down for some reason?
+nnoremap <leader>jj :GitGutterNextHunk<CR>
+" Up for some reason?
+nnoremap <leader>kk :GitGutterPrevHunk<CR>
+
 nmap <leader>[ <Plug>(GitGutterPreviewHunk)
 
 " VimInspector
