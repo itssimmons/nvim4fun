@@ -2,9 +2,9 @@
 " (Based on 'https://github.com/probe2k/bspwm_rice/blob/master/nvim/config/tabline.vim')
 function! CustomTabline()
 	
-		hi TablineFiletype          cterm=none   gui=none   ctermbg=none ctermfg=5 guibg=none    guifg=#db0088
-		hi TablineFiletypeIcon      cterm=none   gui=none   ctermbg=5    ctermfg=0 guibg=#db0088 guifg=#0f0c14
-		hi TablineFiletypeBody      cterm=none   gui=none   ctermbg=8    ctermfg=5 guibg=#181320 guifg=#db0088
+		hi TablineFiletype          cterm=none   gui=none   ctermbg=none ctermfg=5 guibg=none    guifg=#f92672
+		hi TablineFiletypeIcon      cterm=none   gui=none   ctermbg=5    ctermfg=0 guibg=#f92672 guifg=#0f0c14
+		hi TablineFiletypeBody      cterm=none   gui=none   ctermbg=8    ctermfg=5 guibg=#181320 guifg=#f92672
 		hi TablineFiletypeSeparator cterm=none   gui=none   ctermbg=none ctermfg=8 guibg=none    guifg=#181320
 
 		function! FiletypeIcon()

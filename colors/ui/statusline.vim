@@ -20,7 +20,7 @@ let g:lightline = {
 \  'linter_errors': 'lightline#ale#errors',
 \  'linter_ok': 'lightline#ale#ok'
 \ },
-\ 'colorscheme': 'lucid',
+\ 'colorscheme': 'pinkple',
 \ 'subseparator': {
 \  'left': '',
 \  'right': ''
