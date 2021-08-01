@@ -7,14 +7,14 @@
 :let _gray_light  = '#d2c3ef'
 :let _cloud       = '#e4e0ed'
 
-:let _turquoise   = '#3fc997'
-:let _fluoric     = '#d0ffc3'
+:let _turquoise   = '#9154E4'
+:let _fluoric     = '#00a5d1'
 :let _cyan        = '#99feff'
-:let _steel       = '#83a8d1'
+:let _steel       = '#ffffff'
 :let _powder      = '#8fc7db'
 :let _purple      = '#7470ce'
-:let _sky         = '#b3e4eb'
-:let _pink        = '#db0088'
+:let _sky         = '#48ff9f'
+:let _pink        = '#EA29A1'
 :let _sap         = '#fde9a2'
 
 set background=dark
@@ -142,10 +142,10 @@ hi link cssSelectorOp         Identifier
 hi link hamlTag               Function
 
 " HTML
-" hi link htmlArg               Symbol
-" hi link htmlTag               Constant
+hi link htmlArg               Symbol
+hi link htmlTag               Constant
 hi link htmlTagName           Constant
-" hi link htmlEndTag            Function
+hi link htmlEndTag            Function
 
 " JavaScript
 hi link javascriptFuncArg     Function
@@ -156,7 +156,6 @@ hi link javascriptOpSymbols   Type
 hi link javascriptParens      Function
 hi link javascriptEndcolons   Function
 
-" Javascript (pangloss/vim-javascript)
 hi link jsBraces              Delimiter
 hi link jsClassDefinition     Constant
 hi link jsClassKeyword        PreProc
@@ -185,13 +184,13 @@ hi link texSection            Title
 hi link texStatement          Function
 hi link texTypeSize           Symbol
 hi link texTypeStyle          Symbol
-" hi link texSpecialChar        Userdef
+hi link texSpecialChar        Userdef
 
 " Markdown
 hi link mkdBlockquote         Symbol
 hi link mkdCode               Identifier
 hi link mkdIndentCode         Identifier
-" hi link mkdLink               Normal
+hi link mkdLink               Normal
 
 " MatchTagAlways
 hi link MatchTag              Identifier
@@ -213,24 +212,24 @@ hi link rubyInclude           Include
 hi link rubyInterpolation     Include
 hi link rubyMacro             Function
 hi link rubyModule            Module
-" hi link RubyPseudoVariable    Type
+hi link RubyPseudoVariable    Type
 hi link rubyStringDelimiter   rubyString
 hi link rubySymbol            Symbol
 
 " SASS
 hi link sassClassChar         Type
-" " hi link sassExtend            Symbol
-" " hi link sassMixing            Symbol
+hi link sassExtend            Symbol
+hi link sassMixing            Symbol
 hi link sassIdChar            Identifier
-" hi link sassVariable          Function
+hi link sassVariable          Function
 
 " Slim
-" hi link slimDocType           Function
-" hi link slimDocTypeKeyword    Statement
-hi link rubyKeyword              PreProc
-" hi link slimRubyChar          PreProc
-" hi link slimRubyOutputChar    PreProc
-" hi link slimText              Normal
+hi link slimDocType           Function
+hi link slimDocTypeKeyword    Statement
+hi link rubyKeyword           PreProc
+hi link slimRubyChar          PreProc
+hi link slimRubyOutputChar    PreProc
+hi link slimText              Normal
 
 " VimL
 hi link vimCmdSep             Function
@@ -243,11 +242,9 @@ hi link yamlDocumentStart     Comment
 hi link xmlEndTag             Function
 
 
-" Expand colorgroups
-" ----------------------------------------------------------------------
+" Expand colorgroup ------------------------------------------
 
 let s:colors = {}
-" http://choorucode.com/2011/07/29/vim-chart-of-color-names/
 let valid_cterm_colors =
       \ [
       \     'Black', 'DarkBlue', 'DarkGreen', 'DarkCyan',
