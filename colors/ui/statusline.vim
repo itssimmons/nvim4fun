@@ -36,12 +36,9 @@ let g:lightline.mode_map = {
 \ 'V' : 'Vl',
 \ "\<C-v>": 'Vb',
 \ 'c' : 'C',
-\ 's' : 'S',
-\ 'S' : 'Sl',
-\ "\<C-s>": 'Sb',
 \ 't': 'T'
 \ }
 
 function! MyFiletype()
-    return winwidth(0) > 10 ? (strlen(&filetype) ? WebDevIconsGetFileTypeSymbol() : ' ') : ''
+    return winwidth(0) > 70 ? (strlen(&filetype) ? WebDevIconsGetFileTypeSymbol() : ' ') : ''
  endfunction
