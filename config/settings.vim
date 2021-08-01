@@ -16,7 +16,7 @@ set noshowmode
 set autoindent
 set encoding=UTF-8
 set t_Co=256
-colorscheme lucid 
+colorscheme pinkple
 set history=50
 
 " Tabbing to 4
