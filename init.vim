@@ -26,6 +26,8 @@ Plug 'nvim-treesitter/playground'
 " Nerdtree
 Plug 'scrooloose/nerdtree'                                              
 Plug 'ryanoasis/vim-devicons'                                           
+" Snippets
+Plug 'mattn/emmet-vim'
 " Fuzzy Find n CoC
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }                      
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }                     

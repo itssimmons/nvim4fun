@@ -61,3 +61,7 @@ let g:vimspector_enable_mappings = 'HUMAN'
 
 " Treesitter
 lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
+
+" Emmet
+autocmd FileType html,css,xml EmmetInstall
+let g:user_emmet_leader_key = ","
