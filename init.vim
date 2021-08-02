@@ -55,7 +55,6 @@ source $HOME\AppData\Local\nvim\config\settings.vim
 " ../colors
 source $HOME\AppData\Local\nvim\colors\ui\statusline.vim
 source $HOME\AppData\Local\nvim\colors\ui\tabline.vim
-"source $HOME\AppData\Local\nvim\colors\colorscheme.vim
 " ../keymaps
 source $HOME\AppData\Local\nvim\keymaps\shortcuts.vim
 " ../
