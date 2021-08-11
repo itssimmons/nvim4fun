@@ -37,42 +37,47 @@ nmap <leader>n :NERDTreeToggle<CR>
 nmap ++ <plug>NERDCommenterToggle
 vmap ++ <plug>NERDCommenterToggle
 
-" FZF
-nmap <C-i> :Rg<CR>
-nmap <C-p> :Files<CR>
-" View opened buffers
-nmap <silent> <leader>bb :Buffers<CR>
-
-" Coc Gotos
-nmap <silent> gf <Plug>(coc-definition)
-nmap <silent> gt <plug>(coc-type-definition)
-nmap <silent> gh <Plug>(coc-implementation)
-nmap <silent> gb <Plug>(coc-references)
-" Coc n Vim rename
-let fts = ['vim']
-for i in fts
-	if (&filetype == i)
-		" only in the current file :(
-		nnoremap <F1> :%s/<c-r><c-w>/<c-r><c-w>/gc<c-f>$F/i
-	else
-		nnoremap <F1> <Plug>(coc-rename)
-	endif
-endfor
+" Vim rename
+nnoremap <F1> :%s/<c-r><c-w>/<c-r><c-w>/gc<c-f>$F/i
 
 " Minimazer
 nmap <leader>mm :MaximizerToggle!<CR>
 
 " Git Gutter
 " Down for some reason?
-nnoremap <leader>jj :GitGutterNextHunk<CR>
+nnoremap <leader>j :GitGutterNextHunk<CR>
 " Up for some reason?
-nnoremap <leader>kk :GitGutterPrevHunk<CR>
-
-nmap <leader>[ <Plug>(GitGutterPreviewHunk)
+nnoremap <leader>k :GitGutterPrevHunk<CR>
 
 " VimInspector
-nmap ff :call vimspector#Launch()<CR>
-nmap fx :VimspectorReset<CR>
-nmap fc :VimspectorEval
-nmap fv :VimspectorWatch
+nmap <C-F5> :call vimspector#Launch()<CR>
+nmap fr :VimspectorReset<CR>
+nmap fe :VimspectorEval
+nmap fw :VimspectorWatch
 autocmd Filetype nmap ff :CocCommand java.debug.vimspector.start<CR>
+
+" Lua Completion
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Telescope
+nnoremap <C-p> <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <C-i> <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+
+" Easy Motion
+" <Leader>f{char} to move to {char}
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+" s{char}{char} to move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Move to line
+map <Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader>L <Plug>(easymotion-overwin-line)
+
+" Move to word
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
