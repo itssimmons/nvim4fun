@@ -24,10 +24,10 @@ if exists("syntax_on")
 	syntax reset
 endif
 
-source ~/AppData/Local/nvim/colors/ui/tabline.vim
-if exists("+showtabline")
-	:call CustomTabline()
-endif
+"source ~/AppData/Local/nvim/colors/ui/tabline.vim
+"if exists("+showtabline")
+	":call CustomTabline()
+"endif
 
 set t_Co=256
 let colors_name = "pinkple"
@@ -123,29 +123,21 @@ hi link NerdTreeDirSlash      Statement
 
 " Language -----------------------------
 
-" Apache
-hi link apacheDeclaration     PreProc
-
-" CoffeeScript
-hi link coffeeExtendedOp      Function
-hi link coffeeObject          Statement
-hi link coffeeObjAssign       Function
-hi link coffeeParen           Function
-
-" CSS
-hi link cssAttr               String
-hi link cssClass              Type
-hi link cssProp               Identifier
-hi link cssSelectorOp         Identifier
-
-" HAML
-hi link hamlTag               Function
-
-" HTML
-hi link htmlArg               Symbol
-hi link htmlTag               Constant
-hi link htmlTagName           Constant
-hi link htmlEndTag            Function
+" C++
+hi def link cppSTLbool         Boolean
+hi def link cppStatement       Statement
+hi def link cppSTLfunction     Function
+hi def link cppSTLdefine       Constant
+hi def link cppSTLconstant     Constant
+hi def link cppSTLnamespace    Constant
+hi def link cppSTLexception    Type
+hi def link cppSTLiterator     Type
+hi def link cppSTLtype         Type
+hi def link cppSTLtypedef      Typedef
+hi def link cppSTLenum         Typedef
+hi def link cppSTLios          Function
+hi def link cppSTLconcept      Typedef
+hi def link cppSTLvariable     Identifier
 
 " JavaScript
 hi link javascriptFuncArg     Function
@@ -156,35 +148,13 @@ hi link javascriptOpSymbols   Type
 hi link javascriptParens      Function
 hi link javascriptEndcolons   Function
 
-hi link jsBraces              Delimiter
-hi link jsClassDefinition     Constant
-hi link jsClassKeyword        PreProc
-hi link jsExtendsKeyword      Function
-hi link jsFuncCall            Function
-hi link jsModuleKeyword       Identifier
-hi link jsNull                Identifier
-hi link jsObjectKey           Identifier
-hi link jsStorageClass        Structure
-hi link jsTemplateBraces      PreProc
-
 " JSON
 hi link jsonKeyword           Function
 
-" LaTeX
-hi link texInputFile          PreProc
-hi link texDocType            Constant
-hi link texDocTypeArgs        Function
-hi link texInputFile          Symbol
-hi link texInputFileOpt       String
-hi link texMathMatcher        Statement
-hi link texMathSymbol         Symbol
-hi link texMathZoneA          Symbol
-hi link texMathZoneAS         Symbol
-hi link texSection            Title
-hi link texStatement          Function
-hi link texTypeSize           Symbol
-hi link texTypeStyle          Symbol
-hi link texSpecialChar        Userdef
+" PHP
+hi link phpParent             Normal
+hi link phpRegion             Comment
+hi link phpVarSelector        Identifier
 
 " Markdown
 hi link mkdBlockquote         Symbol
@@ -192,55 +162,20 @@ hi link mkdCode               Identifier
 hi link mkdIndentCode         Identifier
 hi link mkdLink               Normal
 
-" MatchTagAlways
-hi link MatchTag              Identifier
-
-" PHP
-hi link phpParent             Normal
-hi link phpRegion             Comment
-hi link phpVarSelector        Identifier
-
-" Ruby
-hi link rubyAccess            Access
-hi link rubyCallback          Function
-hi link rubyClass             Class
-hi link rubyControl           Statement
-hi link rubyConstant          Constant
-hi link rubyEntity            Function
-hi link rubyFunction          StorageClass
-hi link rubyInclude           Include
-hi link rubyInterpolation     Include
-hi link rubyMacro             Function
-hi link rubyModule            Module
-hi link RubyPseudoVariable    Type
-hi link rubyStringDelimiter   rubyString
-hi link rubySymbol            Symbol
-
-" SASS
-hi link sassClassChar         Type
-hi link sassExtend            Symbol
-hi link sassMixing            Symbol
-hi link sassIdChar            Identifier
-hi link sassVariable          Function
-
-" Slim
-hi link slimDocType           Function
-hi link slimDocTypeKeyword    Statement
-hi link rubyKeyword           PreProc
-hi link slimRubyChar          PreProc
-hi link slimRubyOutputChar    PreProc
-hi link slimText              Normal
-
-" VimL
-hi link vimCmdSep             Function
-
-" YAML
-hi link yamlBlockMappingKey   Function
-hi link yamlDocumentStart     Comment
-
 " XML
 hi link xmlEndTag             Function
 
+" HTML
+"hi link htmlArg               Symbol
+"hi link htmlTag               Constant
+hi link htmlTagName           Constant
+"hi link htmlEndTag            Function
+
+" CSS
+hi link cssAttr               String
+hi link cssClass              Type
+hi link cssProp               Identifier
+hi link cssSelectorOp         Identifier
 
 " Expand colorgroup ------------------------------------------
 

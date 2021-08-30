@@ -10,7 +10,7 @@ This is my onw nvim folder configuration, I hope u like it or can resolve ur iss
 1. [Git](https://git-scm.com/downloads)
 2. [NodeJS](https://nodejs.org/es/download/)
 3. [Python3](https://www.python.org/downloads/)
-	* [pynvim](https://github.com/neovim/pynvim) 
+	*3.1.* [pynvim](https://github.com/neovim/pynvim) 
 4. [NeoVim](https://github.com/neovim/neovim/wiki/Installing-Neovim) obviously :)
 
 To install all of this, I prefer use Chocolatey (package manager)

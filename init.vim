@@ -1,62 +1,57 @@
-" Average vim user be like:
-"
-" ⠄⠄⠄⠄⠄⠄⠄⠄⢀⢀⣴⣿⣿⣷⣶⣤⣄⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
-" ⠄⠄⠄⠄⠄⢀⣤⡶⠿⢘⣥⠢⠐⠗⣹⣿⣿⣿⣤⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
-" ⠄⠄⠄⠄⠄⠘⣅⣂⠹⣪⣭⣥⣶⣿⡿⠿⢭⡻⣿⣷⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
-" ⠄⠄⢀⣤⣤⡀⠄⣭⣧⣾⡿⠿⡋⢅⡪⠅⣢⣿⡿⠟⢁⣶⣶⣶⣤⣠⣄⡀⠄⠄
-" ⢠⣴⣿⣿⣟⣤⣤⡉⠭⣑⡨⢔⣊⣵⣶⡿⠛⢉⣴⡾⠿⠿⣿⣿⣿⣎⠻⣿⣦⡀
-" ⣼⣧⢻⣿⣿⣿⡈⣿⢰⢰⠌⣻⣭⣭⣶⡷⣠⡤⠶⠾⠛⢓⣒⣮⣝⡻⠸⣼⣿⣿
-" ⣿⣝⢶⣿⣿⣿⡃⠄⢏⣸⡄⢻⡿⣿⣟⣵⠶⢛⣛⣛⣛⡒⠦⣝⠿⣿⣦⡙⣿⡿
-" ⠻⣿⣿⣿⣿⣿⣷⣦⣜⡿⣿⣄⢓⡘⠃⣴⣾⣿⣿⣿⣿⢹⣯⣶⣅⢺⣿⡇⠻⠁
-" ⠄⠈⠛⠻⣿⣿⣿⣿⣿⣿⣿⡾⣿⣷⣾⣝⣻⢿⣿⣿⣿⠸⣛⣿⡟⣢⢻⣿⠄⠄
-" ⠄⠄⠄⠄⠘⢿⣿⣿⣿⣿⣿⣷⣦⣭⣿⣿⣿⣦⣵⡾⢃⣾⣿⣿⢱⡿⣸⠋⠄⠄
-" ⠄⠄⠄⠄⠄⠄⢻⣿⢿⣿⣿⠻⣿⣿⡿⠿⣟⣛⣉⣰⣿⣿⣿⠇⠛⠃⠄⠄⠄⠄
-" ⠄⠄⠄⠄⠄⠄⠄⠉⠲⣝⣫⣓⡙⣿⣜⣛⣛⣛⣻⡯⠹⠛⠁⠄⠄⠄⠄⠄⠄⠄
-" ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠙⠛⢻⡈⢿⡿⠟⠛⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
-"
-" ---> Plugins <---
-call plug#begin('~\.nvim\plugged')
-" UI
-Plug 'itchyny/lightline.vim'                                            
-Plug 'maximbaz/lightline-ale'                                           
-" Highlight n wrap 
-Plug 'tpope/vim-surround'                                               
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" { Plugins
+call plug#begin('~\.vim\plugged')
+" LSP
+Plug 'neovim/nvim-lspconfig'
+Plug 'glepnir/lspsaga.nvim'
+Plug 'nvim-lua/completion-nvim'
+Plug 'aca/completion-tabnine', { 'do': './install.sh' }
+" CoC
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+"VS Code
+Plug 'kyazdani42/nvim-tree.lua'
+Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'akinsho/nvim-bufferline.lua'
+Plug 'hoob3rt/lualine.nvim'
+Plug 'folke/trouble.nvim'
+Plug 'easymotion/vim-easymotion'
+Plug 'scrooloose/nerdcommenter'
+Plug 'chrisbra/Colorizer'
+" Windows navigate
+Plug 'christoomey/vim-tmux-navigator'
+" Highlight
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'nvim-treesitter/playground'
-" Nerdtree
-Plug 'scrooloose/nerdtree'                                              
-Plug 'ryanoasis/vim-devicons'                                           
 " Snippets
 Plug 'mattn/emmet-vim'
-" Fuzzy Find n CoC
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }                      
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }                     
-Plug 'junegunn/fzf.vim'                                                 
-" Windows Navigate
-Plug 'christoomey/vim-tmux-navigator'                                   
-" Erros, Comment n Move lines
-Plug 'dense-analysis/ale'                                               
-Plug 'scrooloose/nerdcommenter'                                         
-" Git
-Plug 'airblade/vim-gitgutter'                                           
-Plug 'itchyny/vim-gitbranch'                                            
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'                          
-Plug 'Xuyuanp/nerdtree-git-plugin'                                      
+Plug 'tpope/vim-surround'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 " Debugger
 Plug 'szw/vim-maximizer'
 Plug 'puremourning/vimspector'
+" Telescope
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+" Git
+Plug 'lewis6991/gitsigns.nvim'
 call plug#end()
-" ---> Plugins <---
+" }
 
-" ---> Sources <---
-" ..config/
-source $HOME\AppData\Local\nvim\config\plugs-config.vim
-source $HOME\AppData\Local\nvim\config\settings.vim
-" ../colors
-source $HOME\AppData\Local\nvim\colors\ui\statusline.vim
-source $HOME\AppData\Local\nvim\colors\ui\tabline.vim
-" ../keymaps
-source $HOME\AppData\Local\nvim\keymaps\shortcuts.vim
-" ../
-source $HOME\AppData\Local\nvim\mini.vim
-" ---> Sources <---
+" { Sources
+" ./colors
+"source $LOCALAPPDATA\nvim\colors\ui\statusline.vim
+"source $LOCALAPPDATA\nvim\colors\ui\tabline.vim
+" ./mappings
+source $LOCALAPPDATA\nvim\keys\mappings.vim
+" ./config
+source $LOCALAPPDATA\nvim\config\settings.vim
+source $LOCALAPPDATA\nvim\config\autocommands.vim
+source $LOCALAPPDATA\nvim\config\lsp-config.vim
+source $LOCALAPPDATA\nvim\config\plugs-config.vim
+source $LOCALAPPDATA\nvim\config\bufferline.lua
+source $LOCALAPPDATA\nvim\config\evil_lualine.lua
+source $LOCALAPPDATA\nvim\config\luatree.vim
+source $LOCALAPPDATA\nvim\config\coc-config.vim
+" ./
+" }
