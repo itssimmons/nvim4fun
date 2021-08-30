@@ -1,6 +1,7 @@
 "{ Auto commands
 " Do not use smart case in command line mode,
 " extracted from https://goo.gl/vCTYdK
+"
 augroup dynamic_smartcase
     autocmd!
     autocmd CmdLineEnter : set nosmartcase
@@ -59,7 +60,14 @@ augroup auto_read
                 \ | echo "File changed on disk. Buffer reloaded!" | echohl None
 augroup END
 
-" C++ Compiling
-autocmd filetype cpp nnoremap <F5> :w <bar> !g++ -std=c++11 -02 -Wall % -o %*.cpp && %App.exe <CR>
-"autocmd filetype cpp nnoremap <F5> :w <bar> !g++ -std=c++11 -02 -Wall % -o %:r && %:r.exe <CR>
+" Auto Source
+"au! BufWritePost $MYVIMRC source %
+
+" Trim Whitespaces
+autocmd BufWritePre * :%s/\s\+$//e
+
+" Compiler
+autocmd filetype cpp nnoremap <F7> :w<center>:!g++ -std=c++11 %<center>
+"autocmd filetype cpp nnoremap <F8> :w <bar> !g++ -W -Wall -s -pedantic-errors *.cpp,cc -o App.exe && App.exe <CR>
+
 " }

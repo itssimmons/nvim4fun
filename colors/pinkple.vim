@@ -24,10 +24,10 @@ if exists("syntax_on")
 	syntax reset
 endif
 
-source ~/AppData/Local/nvim/colors/ui/tabline.vim
-if exists("+showtabline")
-	:call CustomTabline()
-endif
+"source ~/AppData/Local/nvim/colors/ui/tabline.vim
+"if exists("+showtabline")
+	":call CustomTabline()
+"endif
 
 set t_Co=256
 let colors_name = "pinkple"
