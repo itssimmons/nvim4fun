@@ -89,8 +89,8 @@ local luacompletion = require'completion'
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
--- JS, TS, React, HTML, CSS, C++, Java, Python
-local servers = { 'tsserver', 'clangd', 'pylsp' } -- "html", "cssls" doesnt work
+-- JS, TS, React, C++, Java, Python
+local servers = { 'tsserver', 'clangd', 'pylsp' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = luacompletion.on_attach,
@@ -102,38 +102,38 @@ for _, lsp in ipairs(servers) do
 end
 
 -- Completion Kinds
-local M = {}
+--local M = {}
 
-M.icons = {
-  Class = " ",
-  Color = " ",
-  Constant = " ",
-  Constructor = " ",
-  Enum = "了 ",
-  EnumMember = " ",
-  Field = " ",
-  File = " ",
-  Folder = " ",
-  Function = " ",
-  Interface = "ﰮ ",
-  Keyword = " ",
-  Method = "ƒ ",
-  Module = " ",
-  Property = " ",
-  Snippet = "﬌ ",
-  Struct = " ",
-  Text = " ",
-  Unit = " ",
-  Value = " ",
-  Variable = " ",
-  Tabnine = "TN ",
-}
+--M.icons = {
+  --Class = " ",
+  --Color = " ",
+  --Constant = " ",
+  --Constructor = " ",
+  --Enum = "了 ",
+  --EnumMember = " ",
+  --Field = " ",
+  --File = " ",
+  --Folder = " ",
+  --Function = " ",
+  --Interface = "ﰮ ",
+  --Keyword = " ",
+  --Method = "ƒ ",
+  --Module = " ",
+  --Property = " ",
+  --Snippet = "﬌ ",
+  --Struct = " ",
+  --Text = " ",
+  --Unit = " ",
+  --Value = " ",
+  --Variable = " ",
+  --Tabnine = "TN ",
+--}
 
-function M.setup()
-  local kinds = vim.lsp.protocol.CompletionItemKind
-  for i, kind in ipairs(kinds) do
-    kinds[i] = M.icons[kind] or kind
-  end
-end
+--function M.setup()
+  --local kinds = vim.lsp.protocol.CompletionItemKind
+  --for i, kind in ipairs(kinds) do
+    --kinds[i] = M.icons[kind] or kind
+  --end
+--end
 
-return M
+--return M

@@ -5,8 +5,8 @@ require('gitsigns').setup {
     -- Default keymap options
     noremap = true,
 
-    ['n ]c'] = { expr = true, "&diff ? ']c' : '<cmd>lua require\"gitsigns.actions\".next_hunk()<CR>'"},
-    ['n [c'] = { expr = true, "&diff ? '[c' : '<cmd>lua require\"gitsigns.actions\".prev_hunk()<CR>'"},
+    ['n <C-k>'] = { expr = true, "&diff ? ']c' : '<cmd>lua require\"gitsigns.actions\".next_hunk()<CR>'"},
+    ['n <C-j>'] = { expr = true, "&diff ? '[c' : '<cmd>lua require\"gitsigns.actions\".prev_hunk()<CR>'"},
 
     ['n <leader>hs'] = '<cmd>lua require"gitsigns".stage_hunk()<CR>',
     ['v <leader>hs'] = '<cmd>lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
@@ -24,50 +24,6 @@ require('gitsigns').setup {
   }
 }
 EOF
-
-" Auto Pairs
-let g:AutoPairs = {
-\ '<':'>',
-\ '(':')',
-\ '[':']',
-\ '{':'}',
-\ "'":"'",
-\ '"':'"',
-\ "`":"`",
-\ '```':'```',
-\ '"""':'"""',
-\ "'''":"'''"
-\ }
-
-" Prettier
-au FileType css,scss let b:prettier_exec_cmd = "prettier-stylelint"
-let g:prettier#quickfix_enabled = 0
-let g:prettier#autoformat = 0
-nmap <leader>p :Prettier<CR>
-nmap <leader>P :PrettierCli<CR>
-"autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html,*.xml Prettier
-
-"let g:prettier#exec_cmd_path = ~/path/to/cli/prettier
-let g:prettier#config#print_width = '100'
-let g:prettier#config#tab_width = '3'
-let g:prettier#config#use_tabs = 'true'
-let g:prettier#config#semi = 'false'
-let g:prettier#config#single_quote = 'true'
-let g:prettier#config#bracket_spacing = 'true'
-let g:prettier#config#jsx_bracket_same_line = 'false'
-let g:prettier#config#arrow_parens = 'avoid'
-let g:prettier#config#trailing_comma = 'es5'
-" flow|babylon|typescript|css|less|scss|json|graphql|markdown or empty string
-let g:prettier#config#parser = 'flow'
-" cli-override|file-override|prefer-file
-let g:prettier#config#config_precedence = 'cli-override'
-" always|never|preserve
-let g:prettier#config#prose_wrap = 'preserve'
-" css|strict|ignore
-let g:prettier#config#html_whitespace_sensitivity = 'css'
-"let g:prettier#config#require_pragma = 'true'
-" lf|crlf|cr|all
-let g:prettier#config#end_of_line = get(g:, 'prettier#config#end_of_line', 'all')
 
 " VimInspector
 let g:vimspector_enable_mappings = 'HUMAN'
@@ -99,9 +55,6 @@ let g:startify_lists = [
 \ { 'type': 'commands',  'header': ['   Commands']       },
 \ ]
 
-" Colorizer
-nnoremap <leader>c :ColorToggle<CR>
-
 " Telescope
 lua << EOF
 require("telescope").setup {
@@ -128,7 +81,7 @@ require("telescope").setup {
     find_files = {
       theme = "dropdown"
     },
-    live_grep = {
+   live_grep = {
       theme = "dropdown"
     }
   },

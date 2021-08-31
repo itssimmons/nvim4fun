@@ -1,5 +1,4 @@
 source $LOCALAPPDATA\nvim\config\lsp-config.lua
-source $LOCALAPPDATA\nvim\config\lspsaga.lua
 
 " AutoFormat
 autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
@@ -17,7 +16,7 @@ let g:autocomplete.auto_paren = 1
 let g:autocomplete.ignore_case = 1
 let g:autocomplete.matching = ['substring', 'fuzzy']
 let g:autocomplete.confirm_key = "<CR>"
-let g:completion_popup_border = 'rounded'
+"let g:completion_popup_border = 'rounded'
 
 "let g:completion_chain_complete_list = {
 "\  'default': [
@@ -27,8 +26,8 @@ let g:completion_popup_border = 'rounded'
 "\  ]
 "\ }
 
-let g:completion_tabnine_priority = 1
-let g:completion_tabnine_max_num_results=5
+"let g:completion_tabnine_priority = 1
+let g:completion_tabnine_max_num_results = 5
 
 set completeopt=menuone,noselect
 set shortmess+=c
@@ -37,36 +36,36 @@ set shortmess+=c
 let g:completion_menu_length = 80
 let g:completion_abbr_length = 50
 "let g:completion_kind_overrides = 0
-"let g:completion_customize_lsp_label = {
-"\ 'Text' : '',
-"\ 'Function': '',
-"\ 'Variable': '',
-"\ 'Method': '',
-"\ 'Constant': '',
-"\ 'Struct': 'פּ',
-"\ 'Class': '',
-"\ 'Interface':'',
-"\ 'Enum': '',
-"\ 'EnumMember': '',
-"\ 'Module': '',
-"\ 'Color': '',
-"\ 'Property': 'שּׂ',
-"\ 'Field': '',
-"\ 'Unit': '',
-"\ 'File': '',
-"\ 'Value': ' ',
-"\ 'Event': '',
-"\ 'Folder': '',
-"\ 'Keyword': '',
-"\ 'Snippet': '',
-"\ 'UltiSnips': '',
-"\ 'Operator': '',
-"\ 'Reference': '',
-"\ 'TypeParameter': '',
-"\ 'Default': '',
-"\ 'tabnine': 'tn',
-"\ 'Path': ''
-"\ }
+let g:completion_customize_lsp_label = {
+\ 'Text' : 't [LS] ',
+\ 'Function': 'F [LS] ',
+\ 'Variable': 'V [LS] ',
+\ 'Method': 'm [LS] ',
+\ 'Constant': 'c [LS] ',
+\ 'Struct': 's [LS] ',
+\ 'Class': 'C [LS] ',
+\ 'Interface':'i [LS]',
+\ 'Enum': 'e [LS]',
+\ 'EnumMember': 'E [LS]',
+\ 'Module': 'm [LS] ',
+\ 'Color': 'c [CO] ',
+\ 'Property': 'p [LS] ',
+\ 'Field': 'f [LS] ',
+\ 'Unit': 'u [LS] ',
+\ 'File': 'fi [PA] ',
+\ 'Value': 'v [LS] ',
+\ 'Event': 'ev [LS] ',
+\ 'Folder': 'fo [PA] ',
+\ 'Keyword': 'k [LS] ',
+\ 'Snippet': 's [SN] ',
+\ 'UltiSnips': 's [SN] ',
+\ 'Operator': 'o [LS] ',
+\ 'Reference': 'r [LS] ',
+\ 'TypeParameter': 'tp [LS] ',
+\ 'Default': 'd [DE]',
+\ 'tabnine': ' [TN] ',
+\ 'Path': ' [PA] '
+\ }
 
 " Open in every buffer
 "autocmd BufEnter * lua require'completion'.on_attach()
@@ -80,3 +79,69 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagn
   update_in_insert = false,
 })
 EOF
+
+" { LspSaga
+lua << EOF
+local saga = require'lspsaga'
+
+-- add your config value here
+-- default value
+-- use_saga_diagnostic_sign = true
+-- error_sign = '',
+-- warn_sign = '',
+-- hint_sign = '',
+-- infor_sign = '',
+-- dianostic_header_icon = '   ',
+-- code_action_icon = ' ',
+-- code_action_prompt = {
+--   enable = true,
+--   sign = true,
+--   sign_priority = 20,
+--   virtual_text = true,
+-- },
+-- finder_definition_icon = '  ',
+-- finder_reference_icon = '  ',
+-- max_preview_lines = 10, -- preview lines of lsp_finder and definition preview
+-- finder_action_keys = {
+--   open = 'o', vsplit = 's',split = 'i',quit = 'q',scroll_down = '<C-f>', scroll_up = '<C-b>' -- quit can be a table
+-- },
+-- code_action_keys = {
+--   quit = 'q',exec = '<CR>'
+-- },
+-- rename_action_keys = {
+--   quit = '<C-c>',exec = '<CR>'  -- quit can be a table
+-- },
+-- definition_preview_icon = '  '
+-- "single" "double" "round" "plus"
+-- border_style = "single"
+-- rename_prompt_prefix = '➤',
+-- if you don't use nvim-lspconfig you must pass your server name and
+-- the related filetypes into this table
+-- like server_filetype_map = {metals = {'sbt', 'scala'}}
+-- server_filetype_map = {}
+
+saga.init_lsp_saga()
+EOF
+
+" { LspSaga Mappings
+" Scroll into saga windows
+nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
+nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
+" Show Docs
+nnoremap <silent>K :Lspsaga hover_doc<CR>
+" Signature Help
+nnoremap <silent> gs :Lspsaga signature_help<CR>
+" Rename
+nnoremap <silent>gr :Lspsaga rename<CR>
+" Preview
+nnoremap <silent> gd :Lspsaga preview_definition<CR>
+" Diagnostic
+nnoremap <silent> <leader>cd :Lspsaga show_line_diagnostics<CR>
+nnoremap <silent><leader>cc <cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>
+nnoremap <silent> [e :Lspsaga diagnostic_jump_next<CR>
+nnoremap <silent> ]e :Lspsaga diagnostic_jump_prev<CR>
+" Terminal
+nnoremap <silent> <A-d> :Lspsaga open_floaterm<CR>
+tnoremap <silent> <A-d> <C-\><C-n>:Lspsaga close_floaterm<CR>
+" }
+" }
