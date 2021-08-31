@@ -38,6 +38,9 @@ Plug 'lewis6991/gitsigns.nvim'
 call plug#end()
 " }
 
+let g:vscode_style = "dark"
+colorscheme vscode
+
 " { Sources
 " ./colors
 "source $LOCALAPPDATA\nvim\colors\ui\statusline.vim
