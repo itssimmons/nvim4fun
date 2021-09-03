@@ -15,7 +15,7 @@
 		"python"
 	],
 	"prettier.printWidth": 100,
-	"prettier.tabWidth": 4,
+	"prettier.tabWidth": 3,
 	"prettier.singleQuote": true,
 	"prettier.trailingComma": "es5",
 	"prettier.bracketSpacing": true,

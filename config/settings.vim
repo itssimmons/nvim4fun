@@ -1,4 +1,4 @@
-" { Basic Config
+"# Basic Config #
 
 "syntax on
 "set hlsearch
@@ -7,6 +7,7 @@ if exists('+termguicolors')
 	 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 	 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 	 set termguicolors
+
 endif
 
 set nocompatible
@@ -21,12 +22,12 @@ set autoindent
 set encoding=UTF-8
 set history=50
 
-" Tabbing to 4
+" Tabbing to 3
 "set list
 "set listchars=tab:\│\
-set tabstop=4
-set shiftwidth=4
-set sw=4
+set tabstop=3
+set shiftwidth=3
+set sw=3
 
 " Basics
 set nowrap
@@ -49,7 +50,6 @@ set smartcase
 " Reducing lag
 set regexpengine=1
 set lazyredraw
+"set norelativenumber
 set ttyfast
 set foldmethod=manual
-
-" }
