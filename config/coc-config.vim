@@ -64,7 +64,7 @@ if index(fts, &filetype) == -1
 	endfunction
 
 	" Highlight the symbol and its references when holding the cursor.
-	autocmd CursorHold * silent call CocActionAsync('highlight')
+	"autocmd CursorHold * silent call CocActionAsync('highlight')
 
 	" Symbol renaming.
 	autocmd FileType fts nmap <leader>rn <Plug>(coc-rename)
@@ -93,4 +93,16 @@ if index(fts, &filetype) == -1
 endif
 
 " Prettier AutoFormat
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
+"command! -nargs=0 Prettier :CocCommand prettier
+nnoremap <leader>p Prettier :CocCommand prettier.formatFile
+
+let g:coc_global_extensions = [
+\ 'coc-vimlsp',
+\ 'coc-snippets',
+\ 'coc-prettier',
+\ 'coc-pairs',
+\ 'coc-lua',
+\ 'coc-html',
+\ 'coc-json',
+\ 'coc-css'
+\ ]

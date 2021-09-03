@@ -84,64 +84,78 @@ EOF
 lua << EOF
 local saga = require'lspsaga'
 
--- add your config value here
--- default value
--- use_saga_diagnostic_sign = true
--- error_sign = '',
--- warn_sign = '',
--- hint_sign = '',
--- infor_sign = '',
--- dianostic_header_icon = '   ',
--- code_action_icon = ' ',
--- code_action_prompt = {
---   enable = true,
---   sign = true,
---   sign_priority = 20,
---   virtual_text = true,
--- },
--- finder_definition_icon = '  ',
--- finder_reference_icon = '  ',
--- max_preview_lines = 10, -- preview lines of lsp_finder and definition preview
--- finder_action_keys = {
---   open = 'o', vsplit = 's',split = 'i',quit = 'q',scroll_down = '<C-f>', scroll_up = '<C-b>' -- quit can be a table
--- },
--- code_action_keys = {
---   quit = 'q',exec = '<CR>'
--- },
--- rename_action_keys = {
---   quit = '<C-c>',exec = '<CR>'  -- quit can be a table
--- },
--- definition_preview_icon = '  '
--- "single" "double" "round" "plus"
--- border_style = "single"
--- rename_prompt_prefix = '➤',
--- if you don't use nvim-lspconfig you must pass your server name and
--- the related filetypes into this table
--- like server_filetype_map = {metals = {'sbt', 'scala'}}
--- server_filetype_map = {}
+saga.init_lsp_saga {
+	use_saga_diagnostic_sign = true,
 
-saga.init_lsp_saga()
+	error_sign = '',
+	warn_sign = '',
+	hint_sign = '',
+	infor_sign = '',
+	dianostic_header_icon = '   ',
+	code_action_icon = ' ',
+	definition_preview_icon = '  ',
+	rename_prompt_prefix = '>',
+	max_preview_lines = 14, -- preview lines of lsp_finder and definition preview
+	border_style = "round", --single" "double" "round" "plus"
+	code_action_prompt = {
+		enable = true,
+		sign = true,
+   	sign_priority = 20,
+		virtual_text = true,
+	},
+	finder_action_keys = {
+		open = 'o',
+		vsplit = 's',
+		split = 'i',
+		quit = 'q',
+		scroll_down = '<C-f>',
+		scroll_up = '<C-b>'
+	},
+	code_action_keys = {
+	quit = 'q',exec = '<CR>'
+	},
+	rename_action_keys = {
+	  quit = '<C-c>',exec = '<CR>'  -- quit can be a table
+	},
+	server_filetype_map = {
+		metals = {
+			'sbt',
+			'scala'
+		}
+	}
+}
 EOF
 
 " { LspSaga Mappings
 " Scroll into saga windows
 nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
 nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
+" Code action
+nnoremap <silent><leader>ca :Lspsaga code_action<CR>
+vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
+"Lsp Finder
+nnoremap <silent>gh :Lspsaga lsp_finder<CR>
 " Show Docs
 nnoremap <silent>K :Lspsaga hover_doc<CR>
 " Signature Help
-nnoremap <silent> gs :Lspsaga signature_help<CR>
+nnoremap <silent>gs :Lspsaga signature_help<CR>
 " Rename
 nnoremap <silent>gr :Lspsaga rename<CR>
 " Preview
-nnoremap <silent> gd :Lspsaga preview_definition<CR>
+"nnoremap <silent> gd :Lspsaga preview_definition<CR>
 " Diagnostic
 nnoremap <silent> <leader>cd :Lspsaga show_line_diagnostics<CR>
-nnoremap <silent><leader>cc <cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>
-nnoremap <silent> [e :Lspsaga diagnostic_jump_next<CR>
-nnoremap <silent> ]e :Lspsaga diagnostic_jump_prev<CR>
+nnoremap <silent> <leader>cc <cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>
+nnoremap <silent> [d :Lspsaga diagnostic_jump_next<CR>
+nnoremap <silent> ]d :Lspsaga diagnostic_jump_prev<CR>
 " Terminal
 nnoremap <silent> <A-d> :Lspsaga open_floaterm<CR>
 tnoremap <silent> <A-d> <C-\><C-n>:Lspsaga close_floaterm<CR>
+" }
+
+" { LspSaga hightlights
+highlight LspSagaFinderSelection guifg=#ff0000 guibg=#00ff00 gui=bold
+highlight LspSagaBorderTitle guifg=#ff0000 guibg=#00ff00
+highlight LspFloatWinBorder guifg=#ff0000 guibg=#00ff00
 " }
 " }

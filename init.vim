@@ -5,15 +5,19 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'nvim-lua/completion-nvim'
 Plug 'aca/completion-tabnine', { 'do': './install.sh' }
+Plug 'folke/trouble.nvim'
+Plug 'folke/lsp-colors.nvim'
 " CoC
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'neoclide/coc.nvim', {
+\ 'branch': 'release',
+\ 'for': ['html', 'json', 'css', 'vim', 'lua']
+\ }
 "VS Code
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/nvim-bufferline.lua'
 Plug 'hoob3rt/lualine.nvim'
-Plug 'folke/trouble.nvim'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdcommenter'
 Plug 'chrisbra/Colorizer'
@@ -53,7 +57,7 @@ source $LOCALAPPDATA\nvim\config\autocommands.vim
 source $LOCALAPPDATA\nvim\config\lsp-config.vim
 source $LOCALAPPDATA\nvim\config\plugs-config.vim
 source $LOCALAPPDATA\nvim\config\bufferline.lua
-source $LOCALAPPDATA\nvim\config\evil_lualine.lua
+source $LOCALAPPDATA\nvim\config\lualine.lua
 source $LOCALAPPDATA\nvim\config\luatree.vim
 source $LOCALAPPDATA\nvim\config\coc-config.vim
 " ./

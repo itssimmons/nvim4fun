@@ -5,8 +5,8 @@ require('gitsigns').setup {
     -- Default keymap options
     noremap = true,
 
-    ['n <C-k>'] = { expr = true, "&diff ? ']c' : '<cmd>lua require\"gitsigns.actions\".next_hunk()<CR>'"},
-    ['n <C-j>'] = { expr = true, "&diff ? '[c' : '<cmd>lua require\"gitsigns.actions\".prev_hunk()<CR>'"},
+    ['n <leader>j'] = { expr = true, "&diff ? ']c' : '<cmd>lua require\"gitsigns.actions\".next_hunk()<CR>'"},
+    ['n <leader>k'] = { expr = true, "&diff ? '[c' : '<cmd>lua require\"gitsigns.actions\".prev_hunk()<CR>'"},
 
     ['n <leader>hs'] = '<cmd>lua require"gitsigns".stage_hunk()<CR>',
     ['v <leader>hs'] = '<cmd>lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
@@ -46,15 +46,6 @@ let g:user_emmet_install_global = 0
 autocmd FileType xml,html,css,javascript,typescript EmmetInstall
 let g:user_emmet_leader_key = ","
 
-" Startify
-let g:startify_lists = [
-\ { 'type': 'files',     'header': ['   MRU']            },
-\ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
-\ { 'type': 'sessions',  'header': ['   Sessions']       },
-\ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-\ { 'type': 'commands',  'header': ['   Commands']       },
-\ ]
-
 " Telescope
 lua << EOF
 require("telescope").setup {
@@ -78,10 +69,10 @@ require("telescope").setup {
         }
       }
     },
-    find_files = {
+	 find_files = {
       theme = "dropdown"
     },
-   live_grep = {
+	 live_grep = {
       theme = "dropdown"
     }
   },
@@ -137,4 +128,12 @@ lua << EOF
       },
       use_lsp_diagnostic_signs = false -- enabling this will use the signs defined in your lsp client
 }
+EOF
+lua << EOF
+require("lsp-colors").setup({
+  Error = "#db4b4b",
+  Warning = "#e0af68",
+  Information = "#0db9d7",
+  Hint = "#10B981"
+})
 EOF

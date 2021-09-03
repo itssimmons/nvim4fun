@@ -47,17 +47,17 @@ vnoremap <A-h> <gv
 vnoremap <A-l> >gv
 
 " Split
-nmap <silent> <C-Up> :vsplit<CR>
-nmap <silent> <C-Right> :split<CR>
+nnoremap <silent> <C-Up> :vsplit<CR>
+nnoremap <silent> <C-Right> :split<CR>
 
-"Nerdtree comment
+" Terminal
+nmap t :term powershell!<CR>
+
+" Nerdtree comment
 nmap ++ <plug>NERDCommenterToggle
-vmap ++ <plug>NERDCommenterToggle
 vmap -- <plug>NERDCommenterMinimal
-vmap -+ <plug>NERDCommenterUncomment
-nmap -+ <plug>NERDCommenterUncomment
 
-" Vim rename
+" Quick rename
 nnoremap <F1> :%s/<c-r><c-w>/<c-r><c-w>/gc<c-f>$F/i
 nnoremap m, :nohl<CR>
 
@@ -65,7 +65,7 @@ nnoremap m, :nohl<CR>
 nmap <leader>m :MaximizerToggle!<CR>
 
 " VimInspector
-nmap ff :call vimspector#Launch()<CR>
+nmap <C-F5> :call vimspector#Launch()<CR>
 nmap fr :VimspectorReset<CR>
 nmap fe :VimspectorEval<CR>
 nmap fw :VimspectorWatch<CR>
