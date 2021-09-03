@@ -13,6 +13,7 @@ Plug 'neoclide/coc.nvim', {
 \ 'for': ['html', 'json', 'css', 'vim', 'lua']
 \ }
 "VS Code
+Plug 'mhinz/vim-startify'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
