@@ -4,10 +4,10 @@ This is my onw neovim configuration, I hope u like it
 ## Preview
 
 ### New Preview
-***Soon***
+![](https://github.com/sssimxn/nvim4win/blob/dev/newpreview.png)
 
 ### Old Preview
-![](https://github.com/sssimxn/nvim4win/blob/features/lspNcoc/preview.png)
+![](https://github.com/sssimxn/nvim4win/blob/dev/preview.png)
 
 ## Support
 
