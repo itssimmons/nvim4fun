@@ -63,3 +63,6 @@ source $LOCALAPPDATA\nvim\config\luatree.vim
 source $LOCALAPPDATA\nvim\config\coc-config.vim
 " ./
 " }
+
+" :help startify-faq-02
+set viminfo='100,n$HOME/.vim/files/info/viminfo
