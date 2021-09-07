@@ -13,6 +13,7 @@ Plug 'neoclide/coc.nvim', {
 \ 'for': ['html', 'json', 'css', 'vim', 'lua']
 \ }
 "VS Code
+Plug 'mhinz/vim-startify'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -62,3 +63,6 @@ source $LOCALAPPDATA\nvim\config\luatree.vim
 source $LOCALAPPDATA\nvim\config\coc-config.vim
 " ./
 " }
+
+" :help startify-faq-02
+set viminfo='100,n$HOME/.vim/files/info/viminfo
