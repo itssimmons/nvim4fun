@@ -4,10 +4,17 @@ This is my onw neovim configuration, I hope u like it
 ## Preview
 
 ### New Preview
+<<<<<<< HEAD
 ![](https://github.com/sssimxn/nvim4win/blob/dev/newpreview.png)
 
 ### Old Preview
 ![](https://github.com/sssimxn/nvim4win/blob/dev/preview.png)
+=======
+![](https://github.com/sssimxn/nvim4win/blob/stable/newpreview.png)
+
+### Old Preview
+![](https://github.com/sssimxn/nvim4win/blob/stable/preview.png)
+>>>>>>> stable
 
 ## Support
 
