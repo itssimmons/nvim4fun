@@ -126,29 +126,29 @@ saga.init_lsp_saga {
 }
 EOF
 
-let ftss = ['python', 'javascript', 'cpp']
+let ft = ['python', 'javascript', 'cpp']
 " { LspSaga Mappings
 " Scroll into saga windows
-autocmd FileType ftss nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
-autocmd filetype ftss nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
+autocmd FileType ft nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
+autocmd filetype ft nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
 " Code action
-autocmd filetype ftss nnoremap <silent><leader>ca :Lspsaga code_action<CR>
-autocmd filetype ftss vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
+autocmd filetype ft nnoremap <silent><leader>ca :Lspsaga code_action<CR>
+autocmd filetype ft vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
 "Lsp Finder
-autocmd filetype ftss nnoremap <silent>gh :Lspsaga lsp_finder<CR>
+autocmd filetype ft nnoremap <silent>gh :Lspsaga lsp_finder<CR>
 " Show Docs
-autocmd filetype ftss nnoremap <silent>K :Lspsaga hover_doc<CR>
+autocmd filetype ft nnoremap <silent>K :Lspsaga hover_doc<CR>
 " Signature Help
-autocmd filetype ftss nnoremap <silent>gs :Lspsaga signature_help<CR>
+autocmd filetype ft nnoremap <silent>gs :Lspsaga signature_help<CR>
 " Rename
-autocmd filetype ftss nnoremap <silent>gr :Lspsaga rename<CR>
+autocmd filetype ft nnoremap <silent>gr :Lspsaga rename<CR>
 " Preview
 "nnoremap <silent> gd :Lspsaga preview_definition<CR>
 " Diagnostic
-autocmd filetype ftss nnoremap <silent> <leader>cd :Lspsaga show_line_diagnostics<CR>
-autocmd filetype ftss nnoremap <silent> <leader>cc <cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>
-autocmd filetype ftss nnoremap <silent> [d :Lspsaga diagnostic_jump_next<CR>
-autocmd filetype ftss nnoremap <silent> ]d :Lspsaga diagnostic_jump_prev<CR>
+autocmd filetype ft nnoremap <silent> <leader>cd :Lspsaga show_line_diagnostics<CR>
+autocmd filetype ft nnoremap <silent> <leader>cc <cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>
+autocmd filetype ft nnoremap <silent> [d :Lspsaga diagnostic_jump_next<CR>
+autocmd filetype ft nnoremap <silent> ]d :Lspsaga diagnostic_jump_prev<CR>
 " Terminal
 nnoremap <silent> <A-d> :Lspsaga open_floaterm<CR>
 tnoremap <silent> <A-d> <C-\><C-n>:Lspsaga close_floaterm<CR>
