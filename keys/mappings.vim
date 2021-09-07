@@ -55,6 +55,7 @@ nmap t :term powershell!<CR>
 
 " Nerdtree comment
 nmap ++ <plug>NERDCommenterToggle
+vmap ++ <plug>NERDCommenterToggle
 vmap -- <plug>NERDCommenterMinimal
 
 " Quick rename
