@@ -127,7 +127,7 @@ EOF
 " a list of groups can be found at `:help nvim_tree_highlight`
 function! NvimTreeHi()
 highlight NvimTreeSymlink              gui=NONE guifg=LightGray guibg=LightGray
-highlight NvimTreeFolderIcon           gui=NONE guifg=#fff guibg=#fff
+highlight NvimTreeFolderIcon           gui=NONE guifg=#0074c1 guibg=#fff
 highlight NvimTreeFolderName           gui=NONE guifg=LightGray
 highlight nvimtreerootfolder           gui=NONE guifg=#c586c0
 highlight NvimTreeEmptyFolderName      gui=NONE guifg=LightGray
@@ -139,12 +139,12 @@ highlight NvimTreeImageFile            gui=NONE guifg=Violet
 "highlight NvimTreeMarkdownFile
 "hi NvimTreeIndentMarker
 
-hi LspDiagnosticsError						gui=NONE guifg=#cc291b
-hi LspDiagnosticsWarning					gui=NONE guifg=#ded523
-hi LspDiagnosticsInformation				gui=NONE guifg=#57d5ff
-hi LspDiagnosticsHint						gui=NONE guifg=#1a64db
+highlight LspDiagnosticsError						gui=NONE guifg=#cc291b
+highlight LspDiagnosticsWarning					gui=NONE guifg=#ded523
+highlight LspDiagnosticsInformation				gui=NONE guifg=#57d5ff
+highlight LspDiagnosticsHint						gui=NONE guifg=#1a64db
 
-highlight NvimTreeGitDirty                      guifg=Grey
+highlight NvimTreeGitDirty                      guifg=#ebbe7b
 highlight NvimTreeGitStaged                     guifg=LightGray
 highlight NvimTreeGitMerge                      guifg=LightGray
 highlight NvimTreeGitRenamed                    guifg=LightGray
