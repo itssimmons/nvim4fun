@@ -18,16 +18,16 @@ set noswapfile
 
 set showtabline=2
 set noshowmode
-set autoindent
+"set autoindent
 set encoding=UTF-8
 set history=50
 
 " Tabbing to 3
 "set list
 "set listchars=tab:\│\
-set tabstop=3
-set shiftwidth=3
-set sw=3
+set tabstop=4
+set shiftwidth=4
+set sw=4
 
 " Basics
 set nowrap

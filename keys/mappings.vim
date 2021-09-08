@@ -51,7 +51,7 @@ nnoremap <silent> <C-Up> :vsplit<CR>
 nnoremap <silent> <C-Right> :split<CR>
 
 " Terminal
-nmap t :term powershell!<CR>
+nmap T :term powershell!<CR>
 
 " Nerdtree comment
 nmap ++ <plug>NERDCommenterToggle
