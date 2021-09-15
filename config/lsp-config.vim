@@ -1,13 +1,27 @@
 source $LOCALAPPDATA\nvim\config\lsp-config.lua
 
+let g:coc_filetypes_enable = ['javascript', 'typescript', 'graphql', 'python', 'c', 'cpp']
+function! s:disable_coc_for_type()
+  if index(g:coc_filetypes_enable, &filetype) == -1
+    :silent! CocEnable
+  else
+   	:silent! CocDisable
+  endif
+endfunction
+
+augroup CocGroup
+ autocmd!
+ autocmd BufNew,BufEnter,BufAdd,BufCreate * call s:disable_coc_for_type()
+augroup end
+
 " AutoFormat
 autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)
-"autocmd BufWritePre *.ts lua vim.lsp.buf.formatting_sync(nil, 100)
-"autocmd BufWritePre *.tsx lua vim.lsp.buf.formatting_sync(nil, 100)
+autocmd BufWritePre *.ts lua vim.lsp.buf.formatting_sync(nil, 100)
+autocmd BufWritePre *.tsx lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.cpp,*.cc,*.c,*.h,*.hpp lua vim.lsp.buf.formatting_sync(nil, 100)
-"autocmd BufWritePre *.java lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)
+"autocmd BufWritePre *.java lua vim.lsp.buf.formatting_sync(nil, 100)
 
 let g:autocomplete = get(g:, 'autocomplete', {})
 let g:completion_enable_snippet = 'UltiSnips'
@@ -26,15 +40,12 @@ let g:autocomplete.confirm_key = "<CR>"
 "\  ]
 "\ }
 
-"let g:completion_tabnine_priority = 1
-let g:completion_tabnine_max_num_results = 5
-
 set completeopt=menuone,noselect
 set shortmess+=c
 
 " Lua Completion
-let g:completion_menu_length = 80
-let g:completion_abbr_length = 50
+let g:completion_menu_length = 100
+let g:completion_abbr_length = 80
 "let g:completion_kind_overrides = 0
 let g:completion_customize_lsp_label = {
 \ 'Text' : 't [LS] ',
@@ -63,7 +74,6 @@ let g:completion_customize_lsp_label = {
 \ 'Reference': 'r [LS] ',
 \ 'TypeParameter': 'tp [LS] ',
 \ 'Default': 'd [DE]',
-\ 'tabnine': ' [TN] ',
 \ 'Path': ' [PA] '
 \ }
 
@@ -126,29 +136,28 @@ saga.init_lsp_saga {
 }
 EOF
 
-let ft = ['python', 'javascript', 'cpp']
 " { LspSaga Mappings
 " Scroll into saga windows
-autocmd FileType ft nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
-autocmd filetype ft nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
+nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
+nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
 " Code action
-autocmd filetype ft nnoremap <silent><leader>ca :Lspsaga code_action<CR>
-autocmd filetype ft vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
+nnoremap <silent><leader>ca :Lspsaga code_action<CR>
+vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
 "Lsp Finder
-autocmd filetype ft nnoremap <silent>gh :Lspsaga lsp_finder<CR>
+nnoremap <silent>gh :Lspsaga lsp_finder<CR>
 " Show Docs
-autocmd filetype ft nnoremap <silent>K :Lspsaga hover_doc<CR>
+nnoremap <silent>K :Lspsaga hover_doc<CR>
 " Signature Help
-autocmd filetype ft nnoremap <silent>gs :Lspsaga signature_help<CR>
+nnoremap <silent>gs :Lspsaga signature_help<CR>
 " Rename
-autocmd filetype ft nnoremap <silent>gr :Lspsaga rename<CR>
+nnoremap <silent>gr :Lspsaga rename<CR>
 " Preview
 "nnoremap <silent> gd :Lspsaga preview_definition<CR>
 " Diagnostic
-autocmd filetype ft nnoremap <silent> <leader>cd :Lspsaga show_line_diagnostics<CR>
-autocmd filetype ft nnoremap <silent> <leader>cc <cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>
-autocmd filetype ft nnoremap <silent> [d :Lspsaga diagnostic_jump_next<CR>
-autocmd filetype ft nnoremap <silent> ]d :Lspsaga diagnostic_jump_prev<CR>
+nnoremap <silent> <leader>cd :Lspsaga show_line_diagnostics<CR>
+nnoremap <silent> <leader>cc <cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>
+nnoremap <silent> [d :Lspsaga diagnostic_jump_next<CR>
+nnoremap <silent> ]d :Lspsaga diagnostic_jump_prev<CR>
 " Terminal
 nnoremap <silent> <A-d> :Lspsaga open_floaterm<CR>
 tnoremap <silent> <A-d> <C-\><C-n>:Lspsaga close_floaterm<CR>

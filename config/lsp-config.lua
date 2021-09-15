@@ -1,4 +1,5 @@
-local nvim_lsp = require('lspconfig')
+local lsp_config = require("lspconfig")
+local lsp_completion = require("completion")
 
 -- Rounded Borders
 vim.lsp.handlers["textDocument/hover"] =
@@ -55,7 +56,6 @@ local on_attach = function(client, bufnr)
 end
 
 -- Column Signs
---local signs = { Error = "", Warning = "", Hint = "", Information = "" }
 local signs = { Error = "", Warning = "", Hint = "", Information = "" }
 
 for type, icon in pairs(signs) do
@@ -74,10 +74,9 @@ local luacompletion = require'completion'
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
--- JS, TS, React, C++, Java, Python
-local servers = { 'tsserver', 'clangd', 'pylsp' }
+local servers = { "tsserver", "graphql","clangd", "pylsp"}
 for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
+  lsp_config[lsp].setup {
     on_attach = luacompletion.on_attach,
     flags = {
       debounce_text_changes = 150,

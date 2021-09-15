@@ -18,7 +18,7 @@ set noswapfile
 
 set showtabline=2
 set noshowmode
-"set autoindent
+set autoindent
 set encoding=UTF-8
 set history=50
 

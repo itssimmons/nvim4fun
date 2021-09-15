@@ -138,11 +138,34 @@ require("lsp-colors").setup({
 })
 EOF
 
-" Startify
-let g:startify_lists = [
-\ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
-\ { 'type': 'files',     'header': ['   MRU']            },
-\ { 'type': 'sessions',  'header': ['   Sessions']       },
-\ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-\ { 'type': 'commands',  'header': ['   Commands']       },
-\ ]
+" Prettier
+au FileType css,scss let b:prettier_exec_cmd = "prettier-stylelint"
+"let g:prettier#autoformat = 0
+"autocmd BufWritePre *.js,*.jsx,*.json,*.css,*.html,*.cpp,*.c,*.cc Prettier
+
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+let g:prettier#autoformat_config_present = 1
+"let g:prettier#autoformat_config_files = []
+"let g:prettier#exec_cmd_path = "~/path/to/cli/prettier"
+let g:prettier#quickfix_enabled = 0
+let g:prettier#partial_format = 1
+let g:prettier#quickfix_auto_focus = 0
+
+let g:prettier#config#print_width = 'auto'
+let g:prettier#config#tab_width = '4'
+let g:prettier#config#use_tabs = 'true'
+" flow|babylon|typescript|css|less|scss|json|graphql|markdown or empty string
+let g:prettier#config#parser = 'flow'
+" cli-override|file-override|prefer-file
+let g:prettier#config#config_precedence = 'file-override'
+" always|never|preserve
+let g:prettier#config#prose_wrap = 'preserve'
+" css|strict|ignore
+let g:prettier#config#html_whitespace_sensitivity = 'css'
+let g:prettier#config#require_pragma = 'true'
+" lf|crlf|cr|all
+let g:prettier#config#end_of_line = get(g:, 'prettier#config#end_of_line', 'all')
+
+" IndentLine
+let g:indentLine_char = '▏'

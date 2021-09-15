@@ -4,16 +4,11 @@ call plug#begin('~\.vim\plugged')
 Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'nvim-lua/completion-nvim'
-Plug 'aca/completion-tabnine', { 'do': './install.sh' }
 Plug 'folke/trouble.nvim'
 Plug 'folke/lsp-colors.nvim'
-" CoC
-Plug 'neoclide/coc.nvim', {
-\ 'branch': 'release',
-\ 'for': ['html', 'json', 'css', 'vim', 'lua']
-\ }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "VS Code
-Plug 'mhinz/vim-startify'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -21,9 +16,13 @@ Plug 'akinsho/nvim-bufferline.lua'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdcommenter'
+Plug 'Yggdroot/indentLine'
 Plug 'chrisbra/Colorizer'
-" Windows navigate
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'jiangmiao/auto-pairs'
+Plug 'prettier/vim-prettier', {
+\ 'do': 'yarn install',
+\ 'branch': 'release/0.x'
+\ }
 " Highlight
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'nvim-treesitter/playground'
@@ -60,7 +59,6 @@ source $LOCALAPPDATA\nvim\config\plugs-config.vim
 source $LOCALAPPDATA\nvim\config\bufferline.lua
 source $LOCALAPPDATA\nvim\config\lualine.lua
 source $LOCALAPPDATA\nvim\config\luatree.vim
-source $LOCALAPPDATA\nvim\config\coc-config.vim
 " ./
 " }
 
