@@ -50,7 +50,11 @@ let g:user_emmet_leader_key = ","
 lua << EOF
 require("telescope").setup {
   defaults = {
-    -- Your defaults config goes in here
+		mappings = {
+			n = {
+				["<TAB>"] = false
+			}
+		}
   },
   pickers = {
     -- Your special builtin config goes in here
@@ -129,43 +133,32 @@ lua << EOF
       use_lsp_diagnostic_signs = false -- enabling this will use the signs defined in your lsp client
 }
 EOF
-lua << EOF
-require("lsp-colors").setup({
-  Error = "#db4b4b",
-  Warning = "#e0af68",
-  Information = "#0db9d7",
-  Hint = "#10B981"
-})
-EOF
 
 " Prettier
-au FileType css,scss let b:prettier_exec_cmd = "prettier-stylelint"
-"let g:prettier#autoformat = 0
-"autocmd BufWritePre *.js,*.jsx,*.json,*.css,*.html,*.cpp,*.c,*.cc Prettier
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
 
-let g:prettier#autoformat = 1
-let g:prettier#autoformat_require_pragma = 0
-let g:prettier#autoformat_config_present = 1
+au FileType css,scss let b:prettier_exec_cmd = "prettier-stylelint"
 "let g:prettier#autoformat_config_files = []
 "let g:prettier#exec_cmd_path = "~/path/to/cli/prettier"
-let g:prettier#quickfix_enabled = 0
-let g:prettier#partial_format = 1
-let g:prettier#quickfix_auto_focus = 0
 
-let g:prettier#config#print_width = 'auto'
-let g:prettier#config#tab_width = '4'
+let g:prettier#config#print_width = '80'
+let g:prettier#config#tab_width = '2'
 let g:prettier#config#use_tabs = 'true'
+let g:prettier#config#semi = 'true'
+let g:prettier#config#single_quote = 'true'
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#jsx_bracket_same_line = 'true'
+let g:prettier#config#arrow_parens = 'always'
+let g:prettier#config#trailing_comma = 'es5'
 " flow|babylon|typescript|css|less|scss|json|graphql|markdown or empty string
-let g:prettier#config#parser = 'flow'
+let g:prettier#config#parser = 'typescript'
 " cli-override|file-override|prefer-file
-let g:prettier#config#config_precedence = 'file-override'
+let g:prettier#config#config_precedence = 'cli-override'
 " always|never|preserve
 let g:prettier#config#prose_wrap = 'preserve'
 " css|strict|ignore
 let g:prettier#config#html_whitespace_sensitivity = 'css'
-let g:prettier#config#require_pragma = 'true'
+let g:prettier#config#require_pragma = 'false'
 " lf|crlf|cr|all
 let g:prettier#config#end_of_line = get(g:, 'prettier#config#end_of_line', 'all')
-
-" IndentLine
-let g:indentLine_char = '▏'

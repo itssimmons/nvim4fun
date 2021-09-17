@@ -28,7 +28,7 @@ inoremap kj <Esc>
 nnoremap <A-2> :bnext!<CR>
 " SHIFT-TAB will go back
 nnoremap <A-1> :bprevious!<CR>
-nmap <C-t> :e %:h/
+nmap <C-t> :e! %:h/
 nmap <C-w> :bdelete!<CR>
 
 " Alternate way to save
@@ -43,24 +43,20 @@ nnoremap <C-c> <Esc>
 " Move code blocks/identation
 xnoremap <A-k> :move '<-2<CR>gv-gv
 xnoremap <A-j> :move '>+1<CR>gv-gv
-vnoremap <A-h> <gv
-vnoremap <A-l> >gv
+vnoremap < <gv
+vnoremap > >gv
 
 " Split
 nnoremap <silent> <C-Up> :vsplit<CR>
 nnoremap <silent> <C-Right> :split<CR>
 
-" Terminal
-nmap T :term powershell!<CR>
-
 " Nerdtree comment
 nmap ++ <plug>NERDCommenterToggle
-vmap ++ <plug>NERDCommenterToggle
-vmap -- <plug>NERDCommenterMinimal
+vmap ++ <plug>NERDCommenterMinimal
 
 " Quick rename
 nnoremap <F1> :%s/<c-r><c-w>/<c-r><c-w>/gc<c-f>$F/i
-nnoremap m, :nohl<CR>
+nnoremap <leader><Esc>  :nohl<CR>
 
 " Maximazer
 nmap <leader>m :MaximizerToggle!<CR>
@@ -105,3 +101,7 @@ nnoremap gR <cmd>TroubleToggle lsp_references<cr>
 
 " Colorizer
 nnoremap <leader>ch :ColorToggle<cr>
+
+"Autoimport
+nmap <silent> <leader><CR>   :ImportSymbol<CR>
+imap <silent> <M-CR>   <Esc>:ImportSymbol<CR>a

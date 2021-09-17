@@ -1,29 +1,6 @@
 local lsp_config = require("lspconfig")
 local lsp_completion = require("completion")
 
--- Rounded Borders
-vim.lsp.handlers["textDocument/hover"] =
-  vim.lsp.with(
-  vim.lsp.handlers.hover,
-  {
-    border = "single"
-  }
-)
-
-vim.lsp.handlers["textDocument/signatureHelp"] =
-  vim.lsp.with(
-  vim.lsp.handlers.signature_help,
-  {
-    border = "single"
-  }
-)
-
-vim.cmd [[nnoremap <buffer><silent> <C-space> :lua vim.lsp.diagnostic.show_line_diagnostics({ border = "single" })<CR>]]
-vim.cmd [[nnoremap <buffer><silent> ]g :lua vim.lsp.diagnostic.goto_next({ popup_opts = { border = "single" }})<CR>]]
-vim.cmd [[nnoremap <buffer><silent> [g :lua vim.lsp.diagnostic.goto_prev({ popup_opts = { border = "single" }})<CR>]]
-
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -69,15 +46,13 @@ local on_attach = function(client, bufnr)
   vim.lsp.handlers["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, {border = border})
 end
 
-local luacompletion = require'completion'
-
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-local servers = { "tsserver", "graphql","clangd", "pylsp"}
+local servers = {"tsserver", "graphql", "clangd", "pylsp"}
 for _, lsp in ipairs(servers) do
   lsp_config[lsp].setup {
-    on_attach = luacompletion.on_attach,
+    on_attach = lsp_completion.on_attach,
     flags = {
       debounce_text_changes = 150,
     },

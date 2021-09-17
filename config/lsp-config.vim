@@ -21,24 +21,15 @@ autocmd BufWritePre *.ts lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.tsx lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.cpp,*.cc,*.c,*.h,*.hpp lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)
-"autocmd BufWritePre *.java lua vim.lsp.buf.formatting_sync(nil, 100)
 
 let g:autocomplete = get(g:, 'autocomplete', {})
 let g:completion_enable_snippet = 'UltiSnips'
 let g:autocomplete.auto_hover = 1
 let g:autocomplete.auto_paren = 1
 let g:autocomplete.ignore_case = 1
-let g:autocomplete.matching = ['substring', 'fuzzy']
+let g:autocomplete.matching = ['substring', 'fuzzy', 'all']
 let g:autocomplete.confirm_key = "<CR>"
 "let g:completion_popup_border = 'rounded'
-
-"let g:completion_chain_complete_list = {
-"\  'default': [
-"\  {'complete_items': ['keyn', 'path', 'snippet', 'lsp', 'tabnine'] },
-"\  {'mode': '<c-p>'},
-"\  {'mode': '<c-n>'}
-"\  ]
-"\ }
 
 set completeopt=menuone,noselect
 set shortmess+=c
@@ -77,9 +68,6 @@ let g:completion_customize_lsp_label = {
 \ 'Path': ' [PA] '
 \ }
 
-" Open in every buffer
-"autocmd BufEnter * lua require'completion'.on_attach()
-
 " Popup Diagnostic
 lua << EOF
 vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
@@ -93,7 +81,6 @@ EOF
 " { LspSaga
 lua << EOF
 local saga = require'lspsaga'
-
 saga.init_lsp_saga {
 	use_saga_diagnostic_sign = true,
 
@@ -164,8 +151,8 @@ tnoremap <silent> <A-d> <C-\><C-n>:Lspsaga close_floaterm<CR>
 " }
 
 " { LspSaga hightlights
-highlight LspSagaFinderSelection guifg=#ff0000 guibg=#00ff00 gui=bold
-highlight LspSagaBorderTitle guifg=#ff0000 guibg=#00ff00
-highlight LspFloatWinBorder guifg=#ff0000 guibg=#00ff00
+"highlight LspSagaFinderSelection guifg=#ff0000 guibg=#00ff00 gui=bold
+"highlight LspSagaBorderTitle guifg=#ff0000 guibg=#00ff00
+"highlight LspFloatWinBorder guifg=#ff0000 guibg=#00ff00
 " }
 " }

@@ -1,16 +1,18 @@
-"# Basic Config #
+" { Basic Config
 
 "syntax on
-"set hlsearch
+syntax sync fromstart
 set t_Co=256
 if exists('+termguicolors')
 	 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 	 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 	 set termguicolors
-
 endif
 
+" Prettier
 set nocompatible
+filetype plugin indent on
+
 set updatetime=600
 set nobackup
 set nowritebackup
@@ -22,12 +24,10 @@ set autoindent
 set encoding=UTF-8
 set history=50
 
-" Tabbing to 3
-"set list
-"set listchars=tab:\│\
-set tabstop=4
-set shiftwidth=4
-set sw=4
+" Tabbing to
+set tabstop=2
+set shiftwidth=2
+set sw=2
 
 " Basics
 set nowrap
@@ -42,14 +42,15 @@ set noerrorbells
 set novisualbell
 set t_vb=
 set tm=500
-set showcmd
 set tw=500
+set showcmd
 set ignorecase
 set smartcase
 
 " Reducing lag
 set regexpengine=1
 set lazyredraw
-"set norelativenumber
 set ttyfast
 set foldmethod=manual
+
+" }
