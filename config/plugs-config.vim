@@ -33,7 +33,7 @@ lua << EOF
 require "nvim-treesitter.configs".setup {
   highlight = {
     enable = true,
-    disable = { "vim", "lua" }
+    disable = { "vim", "lua","javascript", "typescript" }
   },
   indent = {
     enable = true
@@ -162,3 +162,6 @@ let g:prettier#config#html_whitespace_sensitivity = 'css'
 let g:prettier#config#require_pragma = 'false'
 " lf|crlf|cr|all
 let g:prettier#config#end_of_line = get(g:, 'prettier#config#end_of_line', 'all')
+
+" NERDCommenter
+"let g:NERDCreateDefaultMappings = 0

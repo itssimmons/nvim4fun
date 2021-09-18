@@ -128,8 +128,8 @@ EOF
 nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
 nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
 " Code action
-nnoremap <silent><leader>ca :Lspsaga code_action<CR>
-vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
+nnoremap <silent><leader>cd :Lspsaga code_action<CR>
+vnoremap <silent><leader>cd :<C-U>Lspsaga range_code_action<CR>
 "Lsp Finder
 nnoremap <silent>gh :Lspsaga lsp_finder<CR>
 " Show Docs
@@ -155,4 +155,5 @@ tnoremap <silent> <A-d> <C-\><C-n>:Lspsaga close_floaterm<CR>
 "highlight LspSagaBorderTitle guifg=#ff0000 guibg=#00ff00
 "highlight LspFloatWinBorder guifg=#ff0000 guibg=#00ff00
 " }
+
 " }

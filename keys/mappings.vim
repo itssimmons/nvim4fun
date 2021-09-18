@@ -101,7 +101,3 @@ nnoremap gR <cmd>TroubleToggle lsp_references<cr>
 
 " Colorizer
 nnoremap <leader>ch :ColorToggle<cr>
-
-"Autoimport
-nmap <silent> <leader><CR>   :ImportSymbol<CR>
-imap <silent> <M-CR>   <Esc>:ImportSymbol<CR>a

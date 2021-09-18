@@ -17,7 +17,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdcommenter'
 Plug 'chrisbra/Colorizer'
 Plug 'jiangmiao/auto-pairs'
-Plug 'wookayin/vim-autoimport'
+Plug 'terryma/vim-multiple-cursors'
 Plug 'prettier/vim-prettier', {
 \ 'do': 'npm install',
 \ 'branch': 'release/0.x'
@@ -37,6 +37,12 @@ Plug 'puremourning/vimspector'
 " Telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+" React
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'jparise/vim-graphql'
 call plug#end()
 " }
 

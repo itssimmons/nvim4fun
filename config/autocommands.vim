@@ -70,4 +70,8 @@ autocmd BufWritePre * :%s/\s\+$//e
 autocmd filetype cpp nnoremap <F7> :w<center>:!g++ -std=c++11 %<center>
 "autocmd filetype cpp nnoremap <F8> :w <bar> !g++ -W -Wall -s -pedantic-errors *.cpp,cc -o App.exe && App.exe <CR>
 
+" Ts/Js syntax
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+
 " }

@@ -1,7 +1,7 @@
 " { Basic Config
 
 "syntax on
-syntax sync fromstart
+"syntax sync fromstart
 set t_Co=256
 if exists('+termguicolors')
 	 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -9,9 +9,9 @@ if exists('+termguicolors')
 	 set termguicolors
 endif
 
-" Prettier
 set nocompatible
 filetype plugin indent on
+filetype on
 
 set updatetime=600
 set nobackup
@@ -48,9 +48,9 @@ set ignorecase
 set smartcase
 
 " Reducing lag
-set regexpengine=1
 set lazyredraw
 set ttyfast
 set foldmethod=manual
+set re=2
 
 " }
