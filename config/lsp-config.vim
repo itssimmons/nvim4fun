@@ -141,8 +141,8 @@ nnoremap <silent>gr :Lspsaga rename<CR>
 " Preview
 "nnoremap <silent> gd :Lspsaga preview_definition<CR>
 " Diagnostic
-nnoremap <silent> <leader>cd :Lspsaga show_line_diagnostics<CR>
-nnoremap <silent> <leader>cc <cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>
+nnoremap <silent> <leader>dl :Lspsaga show_line_diagnostics<CR>
+nnoremap <silent> <leader>dc <cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>
 nnoremap <silent> [d :Lspsaga diagnostic_jump_next<CR>
 nnoremap <silent> ]d :Lspsaga diagnostic_jump_prev<CR>
 " Terminal

@@ -5,8 +5,8 @@ require('gitsigns').setup {
     -- Default keymap options
     noremap = true,
 
-    ['n <leader>j'] = { expr = true, "&diff ? ']c' : '<cmd>lua require\"gitsigns.actions\".next_hunk()<CR>'"},
-    ['n <leader>k'] = { expr = true, "&diff ? '[c' : '<cmd>lua require\"gitsigns.actions\".prev_hunk()<CR>'"},
+    ['n [g'] = { expr = true, "&diff ? ']c' : '<cmd>lua require\"gitsigns.actions\".next_hunk()<CR>'"},
+    ['n ]g'] = { expr = true, "&diff ? '[c' : '<cmd>lua require\"gitsigns.actions\".prev_hunk()<CR>'"},
 
     ['n <leader>hs'] = '<cmd>lua require"gitsigns".stage_hunk()<CR>',
     ['v <leader>hs'] = '<cmd>lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
@@ -33,7 +33,7 @@ lua << EOF
 require "nvim-treesitter.configs".setup {
   highlight = {
     enable = true,
-    disable = { "vim", "lua","javascript", "typescript" }
+    disable = { "vim", "lua", "javascript", "typescript" }
   },
   indent = {
     enable = true
@@ -43,7 +43,7 @@ EOF
 
 " Emmet
 let g:user_emmet_install_global = 0
-autocmd FileType xml,html,css,javascript,typescript EmmetInstall
+autocmd FileType xml,html,css,javascript,typescript,javascriptreact,typescriptreact EmmetInstall
 let g:user_emmet_leader_key = ","
 
 " Telescope
@@ -143,13 +143,13 @@ au FileType css,scss let b:prettier_exec_cmd = "prettier-stylelint"
 "let g:prettier#exec_cmd_path = "~/path/to/cli/prettier"
 
 let g:prettier#config#print_width = '80'
-let g:prettier#config#tab_width = '2'
+let g:prettier#config#tab_width = '3'
 let g:prettier#config#use_tabs = 'true'
 let g:prettier#config#semi = 'true'
-let g:prettier#config#single_quote = 'true'
+let g:prettier#config#single_quote = 'false'
 let g:prettier#config#bracket_spacing = 'true'
-let g:prettier#config#jsx_bracket_same_line = 'true'
-let g:prettier#config#arrow_parens = 'always'
+let g:prettier#config#jsx_bracket_same_line = 'false'
+let g:prettier#config#arrow_parens = 'avoid'
 let g:prettier#config#trailing_comma = 'es5'
 " flow|babylon|typescript|css|less|scss|json|graphql|markdown or empty string
 let g:prettier#config#parser = 'typescript'
@@ -158,10 +158,7 @@ let g:prettier#config#config_precedence = 'cli-override'
 " always|never|preserve
 let g:prettier#config#prose_wrap = 'preserve'
 " css|strict|ignore
-let g:prettier#config#html_whitespace_sensitivity = 'css'
-let g:prettier#config#require_pragma = 'false'
+let g:prettier#config#html_whitespace_sensitivity = 'strict'
+let g:prettier#config#require_pragma = 'true'
 " lf|crlf|cr|all
 let g:prettier#config#end_of_line = get(g:, 'prettier#config#end_of_line', 'all')
-
-" NERDCommenter
-"let g:NERDCreateDefaultMappings = 0

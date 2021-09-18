@@ -4,7 +4,7 @@ set mouse=a
 " Set Editor Font
 if exists(':GuiFont')
     " Use GuiFont! to ignore font errors
-    GuiFont! Roboto Mono:h11:w63
+    GuiFont! Roboto Mono:h13:w63
 endif
 
 " Disable GUI Tabline
@@ -26,5 +26,3 @@ endif
 nnoremap <silent><RightMouse> :call GuiShowContextMenu()<CR>
 inoremap <silent><RightMouse> <Esc>:call GuiShowContextMenu()<CR>
 vnoremap <silent><RightMouse> :call GuiShowContextMenu()<CR>gv
-
-call GuiWindowMaximized(1)

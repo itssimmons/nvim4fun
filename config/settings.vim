@@ -1,7 +1,6 @@
 " { Basic Config
 
 "syntax on
-"syntax sync fromstart
 set t_Co=256
 if exists('+termguicolors')
 	 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -25,9 +24,9 @@ set encoding=UTF-8
 set history=50
 
 " Tabbing to
-set tabstop=2
-set shiftwidth=2
-set sw=2
+set tabstop=3
+set shiftwidth=3
+set sw=3
 
 " Basics
 set nowrap
@@ -51,6 +50,6 @@ set smartcase
 set lazyredraw
 set ttyfast
 set foldmethod=manual
-set re=2
+set re=1
 
 " }
