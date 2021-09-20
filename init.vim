@@ -7,6 +7,7 @@ Plug 'glepnir/lspsaga.nvim'
 Plug 'nvim-lua/completion-nvim'
 Plug 'folke/trouble.nvim'
 "VS Code
+Plug 'mhinz/vim-startify'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'ryanoasis/vim-devicons'
@@ -31,18 +32,15 @@ Plug 'nvim-treesitter/playground'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 " Debugger
-Plug 'szw/vim-maximizer'
 Plug 'puremourning/vimspector'
 " Telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 " React
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-Plug 'jparise/vim-graphql'
 call plug#end()
 " }
 

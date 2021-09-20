@@ -143,8 +143,8 @@ nnoremap <silent>gr :Lspsaga rename<CR>
 " Diagnostic
 nnoremap <silent> <leader>dl :Lspsaga show_line_diagnostics<CR>
 nnoremap <silent> <leader>dc <cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>
-nnoremap <silent> [d :Lspsaga diagnostic_jump_next<CR>
-nnoremap <silent> ]d :Lspsaga diagnostic_jump_prev<CR>
+nnoremap <silent> ]l :Lspsaga diagnostic_jump_next<CR>
+nnoremap <silent> [l :Lspsaga diagnostic_jump_prev<CR>
 " Terminal
 nnoremap <silent> <A-d> :Lspsaga open_floaterm<CR>
 tnoremap <silent> <A-d> <C-\><C-n>:Lspsaga close_floaterm<CR>
