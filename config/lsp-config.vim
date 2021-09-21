@@ -2,11 +2,11 @@ source $LOCALAPPDATA\nvim\config\lsp-config.lua
 
 let g:coc_filetypes_enable = ['javascript', 'typescript', 'graphql', 'python', 'c', 'cpp']
 function! s:disable_coc_for_type()
-  if index(g:coc_filetypes_enable, &filetype) == -1
-    :silent! CocEnable
-  else
-   	:silent! CocDisable
-  endif
+  	if index(g:coc_filetypes_enable, &filetype) == -1
+    	:silent! CocEnable
+	else
+		:silent! CocDisable
+  	endif
 endfunction
 
 augroup CocGroup

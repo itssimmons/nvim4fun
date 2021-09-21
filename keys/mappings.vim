@@ -52,21 +52,22 @@ nnoremap <silent> <C-Right> :split<CR>
 
 " Nerdtree comment
 nmap ++ <plug>NERDCommenterToggle
-vmap ++ <plug>NERDCommenterMinimal
+vmap ++ <plug>NERDCommenterToggle
+vmap -- <plug>NERDCommenterMinimal
 
 " Quick rename
 nnoremap <F1> :%s/<c-r><c-w>/<c-r><c-w>/gc<c-f>$F/i
-nnoremap <leader><Esc>  :nohl<CR>
+nnoremap <leader><Esc> :nohl<CR>
 
 " Maximazer
-nmap <leader>m :MaximizerToggle!<CR>
+nmap mm :MaximizerToggle!<CR>
 
 " VimInspector
 nmap <C-F5> :call vimspector#Launch()<CR>
 nmap fr :VimspectorReset<CR>
 nmap fe :VimspectorEval<CR>
 nmap fw :VimspectorWatch<CR>
-"autocmd Filetype java nmap ff :CocCommand java.debug.vimspector.start<CR>
+"autocmd Filetype java nmap <C-F5> :CocCommand java.debug.vimspector.start<CR>
 
 " Lua Completion
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"

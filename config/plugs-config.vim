@@ -1,27 +1,43 @@
+" AutoPairs
+let g:AutoPairs = {
+\ '(':')',
+\ '[':']',
+\ '{':'}',
+\ "'":"'",
+\ '"':'"',
+\ "`":"`",
+\ '```':'```',
+\ '"""':'"""',
+\ "'''":"'''",
+\ '<':'>',
+\ }
+au FileType php let b:AutoPairs = AutoPairsDefine({'<?' : '?>', '<?php': '?>'})
+let g:AutoPairsShortcutToggle = ''
+
 " GitSigns
 lua << EOF
 require('gitsigns').setup {
-  keymaps = {
-    -- Default keymap options
-    noremap = true,
+	keymaps = {
+		-- Default keymap options
+		noremap = true,
 
-    ['n ]g'] = { expr = true, "&diff ? ']c' : '<cmd>lua require\"gitsigns.actions\".next_hunk()<CR>'"},
-    ['n [g'] = { expr = true, "&diff ? '[c' : '<cmd>lua require\"gitsigns.actions\".prev_hunk()<CR>'"},
+		['n ]g'] = { expr = true, "&diff ? ']c' : '<cmd>lua require\"gitsigns.actions\".next_hunk()<CR>'"},
+		['n [g'] = { expr = true, "&diff ? '[c' : '<cmd>lua require\"gitsigns.actions\".prev_hunk()<CR>'"},
 
-    ['n <leader>hs'] = '<cmd>lua require"gitsigns".stage_hunk()<CR>',
-    ['v <leader>hs'] = '<cmd>lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
-    ['n <leader>hu'] = '<cmd>lua require"gitsigns".undo_stage_hunk()<CR>',
-    ['n <leader>hr'] = '<cmd>lua require"gitsigns".reset_hunk()<CR>',
-    ['v <leader>hr'] = '<cmd>lua require"gitsigns".reset_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
-    ['n <leader>hR'] = '<cmd>lua require"gitsigns".reset_buffer()<CR>',
-    ['n <leader>hp'] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
-    ['n <leader>hb'] = '<cmd>lua require"gitsigns".blame_line(true)<CR>',
-    ['n <leader>hS'] = '<cmd>lua require"gitsigns".stage_buffer()<CR>',
-    ['n <leader>hU'] = '<cmd>lua require"gitsigns".reset_buffer_index()<CR>',
-    -- Text objects
-    ['o ih'] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>',
-    ['x ih'] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>'
-  }
+		['n <leader>hs'] = '<cmd>lua require"gitsigns".stage_hunk()<CR>',
+		['v <leader>hs'] = '<cmd>lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
+		['n <leader>hu'] = '<cmd>lua require"gitsigns".undo_stage_hunk()<CR>',
+		['n <leader>hr'] = '<cmd>lua require"gitsigns".reset_hunk()<CR>',
+		['v <leader>hr'] = '<cmd>lua require"gitsigns".reset_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
+		['n <leader>hR'] = '<cmd>lua require"gitsigns".reset_buffer()<CR>',
+		['n <leader>hp'] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
+		['n <leader>hb'] = '<cmd>lua require"gitsigns".blame_line(true)<CR>',
+		['n <leader>hS'] = '<cmd>lua require"gitsigns".stage_buffer()<CR>',
+		['n <leader>hU'] = '<cmd>lua require"gitsigns".reset_buffer_index()<CR>',
+		-- Text objects
+		['o ih'] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>',
+		['x ih'] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>'
+	}
 }
 EOF
 
@@ -31,9 +47,10 @@ let g:vimspector_enable_mappings = 'HUMAN'
 " Treesitter
 lua << EOF
 require "nvim-treesitter.configs".setup {
+  ensure_installed = "maintained",
   highlight = {
     enable = true,
-    disable = { "vim", "lua", "javascript", "typescript" }
+    disable = { "vim", "lua" }
   },
   indent = {
     enable = true
@@ -136,7 +153,7 @@ EOF
 
 " Prettier
 let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html,*.xml Prettier
 
 au FileType css,scss let b:prettier_exec_cmd = "prettier-stylelint"
 "let g:prettier#autoformat_config_files = []
@@ -162,3 +179,45 @@ let g:prettier#config#html_whitespace_sensitivity = 'strict'
 let g:prettier#config#require_pragma = 'true'
 " lf|crlf|cr|all
 let g:prettier#config#end_of_line = get(g:, 'prettier#config#end_of_line', 'all')
+
+" Startify
+let g:startify_lists = [
+\ { 'type'	: 'dir',       'header': ['   MRU '. getcwd()] },
+\ { 'type'	: 'files',     'header': ['   MRU']            },
+\ { 'type'	: 'sessions',  'header': ['   Sessions']       },
+\ { 'type'	: 'bookmarks', 'header': ['   Bookmarks']      },
+\ ]
+
+" Webicons
+lua << EOF
+require("nvim-web-devicons").setup {
+  override = {
+    ["test.js"] = {
+      icon = "ﭧ",
+      color = "#cbcb41",
+      name = "JsTest"
+    },
+    ["spec.js"] = {
+      icon = "",
+      color = "#cbcb41",
+      name = "JsSpec"
+    },
+    ["test.lua"] = {
+      icon = "ﭧ",
+      color = "#51a0cf",
+      name = "LuaTest"
+    },
+    ["spec.lua"] = {
+      icon = "",
+      color = "#51a0cf",
+      name = "LuaSpec"
+    },
+ 	 ["README.md"] = {
+		icon = "",
+		color = "#6bbcff",
+		name = "Readme"
+	 }
+  },
+  default = true
+}
+EOF

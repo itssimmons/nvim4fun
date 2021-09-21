@@ -38,9 +38,6 @@ Plug 'puremourning/vimspector'
 " Telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-" React
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 call plug#end()
 " }
 
@@ -48,12 +45,12 @@ let g:vscode_style = "dark"
 colorscheme vscode
 
 " { Sources
-" ./colors
+" .\colors\
 "source $LOCALAPPDATA\nvim\colors\ui\statusline.vim
 "source $LOCALAPPDATA\nvim\colors\ui\tabline.vim
-" ./mappings
+" .\keys\
 source $LOCALAPPDATA\nvim\keys\mappings.vim
-" ./config
+" .\config\
 source $LOCALAPPDATA\nvim\config\settings.vim
 source $LOCALAPPDATA\nvim\config\autocommands.vim
 source $LOCALAPPDATA\nvim\config\lsp-config.vim
