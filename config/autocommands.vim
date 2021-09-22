@@ -66,9 +66,10 @@ augroup END
 " Trim Whitespaces
 autocmd BufWritePre * :%s/\s\+$//e
 
-" Compiler
-autocmd filetype cpp nnoremap <F7> :w<center>:!g++ -std=c++11 %<center>
-"autocmd filetype cpp nnoremap <F8> :w <bar> !g++ -W -Wall -s -pedantic-errors *.cpp,cc -o App.exe && App.exe <CR>
+" { Compilers
+autocmd filetype cpp nnoremap <F5> :w <bar> !g++ -std=c++2a % -o %:r && %:r.exe <CR>
+autocmd filetype python nnoremap <F5> :w <bar> !python % <CR>
+" }
 
 " Ts/Js syntax
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
