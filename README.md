@@ -1,19 +1,24 @@
 # Welcome User
+
 This is my onw neovim configuration, I hope u like it
 
 ## Preview
 
 ### New Preview
+
 ![](https://github.com/sssimxn/nvim4win/blob/dev/newpreview.png)
 
 ### Old Preview
+
 ![](https://github.com/sssimxn/nvim4win/blob/dev/preview.png)
 
 ## Install.ps1
+
 A script that install everything automatically \
-***Soon***
+**_Soon_**
 
 ## Support
+
 This configuration its ready to use with these languages:
 
 <div align="center">
@@ -56,11 +61,11 @@ This configuration its ready to use with these languages:
 			<td></td>
 		</tr>
 		<tr>
-			<td>CSS/SASS/LESS</td>
+			<td>CSS/SASS/(LESS)</td>
 			<td>false</td>
 			<td>true</td>
 			<td>- All "CoC" features</td>
-			<td></td>
+			<td>- Sass its setup with the compile n CoC <br>- Less its just setup with CoC</td>
 		</tr>
 		<tr>
 			<td>Python</td>
@@ -110,7 +115,7 @@ This configuration its ready to use with these languages:
 			<td>false</td>
 			<td></td>
 			<td></td>
-		</tr>		
+		</tr>
 		<tr>
 			<td>SQL</td>
 			<td>true</td>
@@ -133,23 +138,24 @@ This configuration its ready to use with these languages:
 
 1. [Git](https://git-scm.com/downloads)
 2. [Node.js](https://nodejs.org/es/download/)
-3. [Python3](https://www.python.org/downloads/) 
-4. [pynvim](https://github.com/neovim/pynvim) 
+3. [Python3](https://www.python.org/downloads/)
+4. [pynvim](https://github.com/neovim/pynvim)
 5. [Neovim nightly](https://github.com/neovim/neovim/releases/tag/nightly)
 
 To install all of this, I prefer use Chocolatey (package manager)
 https://chocolatey.org/install
+
 ```powershell
 # Git
 choco install git
 # Python pre-realease
-choco install python --pre 
+choco install python --pre
 # Node.js
 choco install nodejs
 # pynvim
 pip3 install pynvim
 # Neovim nightly
-choco install neovim --pre 
+choco install neovim --pre
 ```
 
 ## Custom Shortcuts

@@ -24,6 +24,9 @@ Plug 'prettier/vim-prettier', {
 \ 'do': 'npm install',
 \ 'branch': 'release/0.x'
 \ }
+" SASS
+Plug 'AtsushiM/search-parent.vim'
+Plug 'AtsushiM/sass-compile.vim'
 " Git
 Plug 'lewis6991/gitsigns.nvim'
 " Highlight
