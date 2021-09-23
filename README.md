@@ -15,7 +15,7 @@ This is my onw neovim configuration, I hope u like it
 ## Install.ps1
 
 A script that install everything automatically \
-**_Soon_**
+*Soon*
 
 ## Support
 
@@ -64,8 +64,8 @@ This configuration its ready to use with these languages:
 			<td>CSS/SASS/(LESS)</td>
 			<td>false</td>
 			<td>true</td>
-			<td>- All "CoC" features</td>
-			<td>- Sass compiler shortcut (F5) <br>- Less just have autocompletion</td>
+			<td>- All "CoC" features <br>- Sass compiler shortcut (F5)</td>
+			<td>- Less just have autocompletion</td>
 		</tr>
 		<tr>
 			<td>Python</td>
