@@ -1,7 +1,12 @@
 "{ Auto commands
+
+" { Compilers
+autocmd filetype cpp nnoremap <F5> :w <bar> !g++ -std=c++2a % -o %:r && %:r.exe <CR>
+autocmd filetype python nnoremap <F5> :w <bar> !python % <CR>
+" }
+
 " Do not use smart case in command line mode,
 " extracted from https://goo.gl/vCTYdK
-"
 augroup dynamic_smartcase
     autocmd!
     autocmd CmdLineEnter : set nosmartcase
@@ -61,18 +66,19 @@ augroup auto_read
 augroup END
 
 " Auto Source
-"au! BufWritePost $MYVIMRC source %
+au! BufWritePost $MYVIMRC source %
 
 " Trim Whitespaces
 autocmd BufWritePre * :%s/\s\+$//e
 
-" { Compilers
-autocmd filetype cpp nnoremap <F5> :w <bar> !g++ -std=c++2a % -o %:r && %:r.exe <CR>
-autocmd filetype python nnoremap <F5> :w <bar> !python % <CR>
-" }
-
 " Ts/Js syntax
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
 autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+
+" Json with comments
+autocmd! FileType json syntax match Comment +\/\/.\+$+
+augroup JsonToJsonc
+    autocmd! FileType json set filetype=jsonc
+augroup END
 
 " }
