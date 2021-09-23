@@ -119,6 +119,13 @@ This configuration its ready to use with these languages:
 			<td></td>
 		</tr>		
 		<tr>
+			<td>GraphQL</td>
+			<td>true</td>
+			<td>false</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
 			<td>SQL</td>
 			<td>true</td>
 			<td>false</td>
