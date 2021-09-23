@@ -63,6 +63,13 @@ This configuration its ready to use with these languages:
 			<td></td>
 		</tr>
 		<tr>
+			<td>JSON/JSONC</td>
+			<td>false</td>
+			<td>true</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
 			<td>Python</td>
 			<td>true</td>
 			<td>false</td>
