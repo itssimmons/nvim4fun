@@ -9,7 +9,6 @@ let g:AutoPairs = {
 \ '```':'```',
 \ '"""':'"""',
 \ "'''":"'''",
-\ '<':'>',
 \ }
 au FileType php let b:AutoPairs = AutoPairsDefine({'<?' : '?>', '<?php': '?>'})
 let g:AutoPairsShortcutToggle = ''
@@ -160,7 +159,7 @@ au FileType css,scss let b:prettier_exec_cmd = "prettier-stylelint"
 "let g:prettier#exec_cmd_path = "~/path/to/cli/prettier"
 
 let g:prettier#config#print_width = '80'
-let g:prettier#config#tab_width = '3'
+let g:prettier#config#tab_width = '4'
 let g:prettier#config#use_tabs = 'true'
 let g:prettier#config#semi = 'true'
 let g:prettier#config#single_quote = 'false'
@@ -169,7 +168,7 @@ let g:prettier#config#jsx_bracket_same_line = 'false'
 let g:prettier#config#arrow_parens = 'avoid'
 let g:prettier#config#trailing_comma = 'es5'
 " flow|babylon|typescript|css|less|scss|json|graphql|markdown or empty string
-let g:prettier#config#parser = 'typescript'
+let g:prettier#config#parser = 'flow'
 " cli-override|file-override|prefer-file
 let g:prettier#config#config_precedence = 'cli-override'
 " always|never|preserve
@@ -188,7 +187,9 @@ let g:startify_lists = [
 \ { 'type'	: 'bookmarks', 'header': ['   Bookmarks']      },
 \ ]
 
-" Webicons
+" Webicons & Vimicons
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols = {} " needed
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['README.md'] = ''
 lua << EOF
 require("nvim-web-devicons").setup {
   override = {

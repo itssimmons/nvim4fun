@@ -24,8 +24,8 @@ set encoding=UTF-8
 set history=50
 
 " Tabbing to
-set tabstop=3
-set shiftwidth=3
+set tabstop=4
+set shiftwidth=4
 set sw=3
 
 " Basics

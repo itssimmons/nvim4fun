@@ -8,6 +8,7 @@ Plug 'nvim-lua/completion-nvim'
 Plug 'folke/trouble.nvim'
 "VS Code
 Plug 'mhinz/vim-startify'
+Plug 'szw/vim-maximizer'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'ryanoasis/vim-devicons'
@@ -45,6 +46,7 @@ let g:vscode_style = "dark"
 colorscheme vscode
 
 " { Sources
+
 " .\colors\
 "source $LOCALAPPDATA\nvim\colors\ui\statusline.vim
 "source $LOCALAPPDATA\nvim\colors\ui\tabline.vim
