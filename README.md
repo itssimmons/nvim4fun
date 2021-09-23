@@ -65,7 +65,7 @@ This configuration its ready to use with these languages:
 			<td>false</td>
 			<td>true</td>
 			<td>- All "CoC" features</td>
-			<td>- Sass its setup with the compile n CoC <br>- Less its just setup with CoC</td>
+			<td>- Sass compiler shortcut (F5) <br>- Less just have autocompletion</td>
 		</tr>
 		<tr>
 			<td>Python</td>
