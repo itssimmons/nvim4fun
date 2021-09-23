@@ -26,7 +26,7 @@ set history=50
 " Tabbing to
 set tabstop=4
 set shiftwidth=4
-set sw=3
+set sw=4
 
 " Basics
 set nowrap
