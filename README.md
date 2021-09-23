@@ -88,7 +88,7 @@ This configuration its ready to use with these languages:
 			<td>true</td>
 			<td>false</td>
 			<td></td>
-			<td>- I dont used it, but i have it</td>
+			<td>- I dont use it, but i have it</td>
 		</tr>
 		<tr>
 			<td>Java</td>
