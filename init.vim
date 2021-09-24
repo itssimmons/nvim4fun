@@ -54,6 +54,7 @@ colorscheme vscode
 source $LOCALAPPDATA\nvim\keys\mappings.vim
 " .\config\
 source $LOCALAPPDATA\nvim\config\settings.vim
+source $LOCALAPPDATA\nvim\config\prettier.vim
 source $LOCALAPPDATA\nvim\config\autocommands.vim
 source $LOCALAPPDATA\nvim\config\lsp-config.vim
 source $LOCALAPPDATA\nvim\config\plugs-config.vim

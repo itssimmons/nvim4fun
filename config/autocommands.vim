@@ -3,7 +3,7 @@
 " { Compilers
 autocmd filetype cpp nnoremap <F5> :w <bar> !g++ -std=c++2a % -o %:r && %:r.exe <CR>
 autocmd filetype python nnoremap <F5> :w <bar> !python % <CR>
-autocmd filetype scss nnoremap <F5> :w <bar> !sass % %:r.css <CR>
+autocmd filetype scss,sass nnoremap <F5> :w <bar> !sass % %:r.css <CR>
 " }
 
 " Do not use smart case in command line mode,

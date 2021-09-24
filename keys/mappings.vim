@@ -54,6 +54,9 @@ tnoremap <A-t> <C-\><C-n>:call TermToggle(12)<CR>
 " Terminal go back to normal mode
 tnoremap <Esc> <C-\><C-n>
 tnoremap :q! <C-\><C-n>:q!<CR>
+" Terminal in other buffer
+nnoremap T :term! powershell -NoLogo<CR>
+" <A-d> Float terminal
 
 " TAB in general mode will move to text buffer
 nnoremap <A-2> :bnext!<CR>

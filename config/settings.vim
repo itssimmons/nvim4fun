@@ -24,9 +24,10 @@ set encoding=UTF-8
 set history=50
 
 " Tabbing to
-set tabstop=4
-set shiftwidth=4
-set sw=4
+set list listchars=tab:│\ ,trail:·,precedes:←,extends:→
+set tabstop=3
+set shiftwidth=3
+"set sw=3
 
 " Basics
 set nowrap
@@ -50,6 +51,6 @@ set smartcase
 set lazyredraw
 set ttyfast
 set foldmethod=manual
-set re=1
+set re=2
 
 " }
