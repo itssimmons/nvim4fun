@@ -13,9 +13,9 @@ au FileType css,scss,sass,less let b:prettier_exec_cmd = "prettier-stylelint"
 
 " Config {
 let g:prettier#config#print_width = 80
-let g:prettier#config#tab_width = 3
+let g:prettier#config#tab_width = 2
 let g:prettier#config#use_tabs = 'true'
-let g:prettier#config#semi = 'true'
+let g:prettier#config#semi = 'false'
 let g:prettier#config#single_quote = 'true'
 let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#config#jsx_bracket_same_line = 'false'

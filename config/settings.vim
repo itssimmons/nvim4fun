@@ -25,9 +25,9 @@ set history=50
 
 " Tabbing to
 set list listchars=tab:│\ ,trail:·,precedes:←,extends:→
-set tabstop=3
-set shiftwidth=3
-"set sw=3
+set tabstop=2
+set shiftwidth=2
+"set sw=2
 
 " Basics
 set nowrap

@@ -2,16 +2,16 @@ source $LOCALAPPDATA\nvim\config\lsp-config.lua
 
 let g:coc_filetypes_enable = ['javascript', 'typescript', 'graphql', 'python', 'c', 'cpp']
 function! s:disable_coc_for_type()
-  	if index(g:coc_filetypes_enable, &filetype) == -1
-    	:silent! CocEnable
+	if index(g:coc_filetypes_enable, &filetype) == -1
+		:silent! CocEnable
 	else
 		:silent! CocDisable
-  	endif
+	endif
 endfunction
 
 augroup CocGroup
- autocmd!
- autocmd BufNew,BufEnter,BufAdd,BufCreate * call s:disable_coc_for_type()
+	autocmd!
+	autocmd BufNew,BufEnter,BufAdd,BufCreate * call s:disable_coc_for_type()
 augroup end
 
 " AutoFormat
@@ -29,9 +29,14 @@ let g:autocomplete.auto_paren = 1
 let g:autocomplete.ignore_case = 1
 let g:autocomplete.matching = ['substring', 'fuzzy', 'all']
 let g:autocomplete.confirm_key = "<CR>"
-"let g:completion_popup_border = 'rounded'
+let g:completion_popup_border = 'rounded'
 
-set completeopt=menuone,noselect
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
+" Avoid showing message extra message when using completion
 set shortmess+=c
 
 " Lua Completion
@@ -83,7 +88,6 @@ lua << EOF
 local saga = require'lspsaga'
 saga.init_lsp_saga {
 	use_saga_diagnostic_sign = true,
-
 	error_sign = '',
 	warn_sign = '',
 	hint_sign = '',
@@ -97,7 +101,7 @@ saga.init_lsp_saga {
 	code_action_prompt = {
 		enable = true,
 		sign = true,
-   	sign_priority = 20,
+		sign_priority = 20,
 		virtual_text = true,
 	},
 	finder_action_keys = {
@@ -137,23 +141,17 @@ nnoremap <silent>K :Lspsaga hover_doc<CR>
 " Signature Help
 nnoremap <silent>gs :Lspsaga signature_help<CR>
 " Rename
-nnoremap <silent>gr :Lspsaga rename<CR>
+"nnoremap <silent><F2> :Lspsaga rename<CR>
 " Preview
-"nnoremap <silent> gd :Lspsaga preview_definition<CR>
+"nnoremap <silent>gd :Lspsaga preview_definition<CR>
 " Diagnostic
 nnoremap <silent> <leader>dl :Lspsaga show_line_diagnostics<CR>
 nnoremap <silent> <leader>dc <cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>
-nnoremap <silent> ]l :Lspsaga diagnostic_jump_next<CR>
-nnoremap <silent> [l :Lspsaga diagnostic_jump_prev<CR>
+"nnoremap <silent> ]d :Lspsaga diagnostic_jump_next<CR>
+"nnoremap <silent> [d :Lspsaga diagnostic_jump_prev<CR>
 " Terminal
 nnoremap <silent> <A-d> :Lspsaga open_floaterm<CR>
 tnoremap <silent> <A-d> <C-\><C-n>:Lspsaga close_floaterm<CR>
-" }
-
-" { LspSaga hightlights
-"highlight LspSagaFinderSelection guifg=#ff0000 guibg=#00ff00 gui=bold
-"highlight LspSagaBorderTitle guifg=#ff0000 guibg=#00ff00
-"highlight LspFloatWinBorder guifg=#ff0000 guibg=#00ff00
 " }
 
 " }

@@ -2,21 +2,25 @@ vim.opt.termguicolors = true
 -- Buffer line setup
 require'bufferline'.setup{
 	options = {
-    	diagnostics = "nvim_lsp",
+		diagnostics = false,
 		diagnostics_update_in_insert = false,
-		diagnostics_indicator = function(count)
-		return ""..count..""
-		end,
-    	separator_style = "thin",
+		--diagnostics_indicator = function(count)
+		--return ""..""
+		--end,
+		separator_style = "thin",
 		indicator_icon = ' ',
-    	buffer_close_icon = '',
-    	modified_icon = '●',
-    	close_icon = '',
+		buffer_close_icon = '',
+		modified_icon = '●',
+		close_icon = '',
 		close_command = "bdelete %d",
 		right_mouse_command = "bdelete! %d",
 		left_trunc_marker = '',
-    	right_trunc_marker = '',
-		offsets = {{filetype = "NvimTree", text = "EXPLORER", text_align = "center"}},
+		right_trunc_marker = '',
+		offsets = {{
+			filetype = "NvimTree",
+			text = "EXPLORER",
+			text_align = "center"
+		}},
 		show_tab_indicators = true,
 		show_close_icon = false
 	},
