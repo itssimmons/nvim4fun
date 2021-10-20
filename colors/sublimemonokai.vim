@@ -1,8 +1,3 @@
-" File:       monokai.vim
-" Maintainer: Erich Gubler (erichdongubler)
-" URL:        https://github.com/erichdongubler/vim-sublime-monokai
-" License:    MIT
-
 " Initialisation
 
 if !has('gui_running') && &t_Co < 256
@@ -82,7 +77,7 @@ call s:create_palette_color('black',       { 'gui': '#272822', 'cterm': '234' })
 call s:create_palette_color('lightblack',  { 'gui': '#2D2E27', 'cterm': '235' })
 call s:create_palette_color('lightblack2', { 'gui': '#383a3e', 'cterm': '236' })
 call s:create_palette_color('darkblack',   { 'gui': '#211F1C', 'cterm': '233' })
-call s:create_palette_color('grey',        { 'gui': '#8F908A', 'cterm': '243' })
+call s:create_palette_color('grey',        { 'gui': '#272822', 'cterm': '243' })
 call s:create_palette_color('lightgrey',   { 'gui': '#575b61', 'cterm': '237' })
 call s:create_palette_color('darkgrey',    { 'gui': '#64645e', 'cterm': '239' })
 call s:create_palette_color('warmgrey',    { 'gui': '#75715E', 'cterm': '59'  })
@@ -144,7 +139,7 @@ call s:h('ErrorMsg',     { 'fg': s:black,       'bg': s:red,      'format': 'sta
 hi! link FoldColumn SublimeDarkBlack
 call s:h('Folded',       { 'fg': s:warmgrey,    'bg': s:darkblack                              })
 call s:h('IncSearch',    {                                        'format': 'reverse,underline'})
-call s:h('LineNr',       { 'fg': s:grey,        'bg': s:lightblack                             })
+highlight! LineNr guifg=#5f5e58 guibg=#2D2E27
 call s:h('MatchParen',   {                                        'format': 'underline'        })
 hi! link ModeMsg SublimeYellow
 hi! link MoreMsg SublimeYellow
@@ -807,6 +802,39 @@ hi! link NERDTreeGitStatusModified SublimeOrange
 hi! link NERDTreeGitStatusRenamed SublimeOrange
 hi! link NERDTreeGitStatusUntracked SublimeGreen
 
+" NvimTree
+highlight NvimTreeSymlink              gui=NONE guifg=LightGray guibg=LightGray
+highlight NvimTreeFolderIcon           gui=NONE guifg=#d03c6e guibg=#fff
+highlight NvimTreeFolderName           gui=NONE guifg=LightGray
+highlight nvimtreerootfolder           gui=NONE guifg=#c586c0
+highlight NvimTreeEmptyFolderName      gui=NONE guifg=LightGray
+highlight NvimTreeOpenedFolderName     gui=NONE guifg=LightGray
+highlight NvimTreeExecFile             gui=NONE guifg=LightGray
+highlight NvimTreeOpenedFile           gui=NONE guifg=LightGray
+highlight NvimTreeSpecialFile          gui=NONE guifg=LightGray
+highlight NvimTreeImageFile            gui=NONE guifg=Violet
+"highlight NvimTreeMarkdownFile
+"hi NvimTreeIndentMarker
+
+highlight LspDiagnosticsError						gui=NONE guifg=#cc291b
+highlight LspDiagnosticsWarning					gui=NONE guifg=#ded523
+highlight LspDiagnosticsInformation				gui=NONE guifg=#57d5ff
+highlight LspDiagnosticsHint						gui=NONE guifg=#1a64db
+
+highlight NvimTreeGitDirty                      guifg=#ebbe7b
+highlight NvimTreeGitStaged                     guifg=LightGray
+highlight NvimTreeGitMerge                      guifg=LightGray
+highlight NvimTreeGitRenamed                    guifg=LightGray
+highlight NvimTreeGitNew                        guifg=#ebbe7b
+"highlight NvimTreeGitDeleted                    guifg=Black
+
+"hi NvimTreeFileDirty
+"hi NvimTreeFileStaged
+"hi NvimTreeFileMerge
+"hi NvimTreeFileRenamed
+"hi NvimTreeFileNew
+"hi NvimTreeFileDeleted
+
 " PHP
 
 " Variation: It's actually a cool idea to style these to assist reading.
@@ -1119,3 +1147,7 @@ hi! link zshTypes    Keyword
 " * Semicolons in `if` blocks are `Keyword`ed in Sublime but not distinct in
 "     Vim
 " * Commands aren't distinct from builtins and keywords in Vim
+
+hi GitGutterAdd guifg=#1fff8e ctermfg=Green
+hi GitGutterChange guifg=#f3ff41 ctermfg=Yellow
+hi GitGutterDelete guifg=#ff6b41 ctermfg=Red

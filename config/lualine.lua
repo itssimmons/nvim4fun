@@ -5,7 +5,8 @@ local lualine = require 'lualine'
 
 -- Color table for highlights
 local colors = {
-  bg = '#0073C1',
+  --bg = '#0073C1',
+  bg = '#2D2E27',
   fg = '#bbc2cf',
   yellow = '#ECBE7B',
   cyan = '#008080',
@@ -89,7 +90,7 @@ ins_left {
   color_info = colors.white
 }
 
-ins_left { 'mode' }
+ins_left { "mode" }
 
 ins_right {'location'}
 

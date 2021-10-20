@@ -4,10 +4,7 @@ require'bufferline'.setup{
 	options = {
 		diagnostics = false,
 		diagnostics_update_in_insert = false,
-		--diagnostics_indicator = function(count)
-		--return ""..""
-		--end,
-		separator_style = "thin",
+		separator_style = "slant",
 		indicator_icon = ' ',
 		buffer_close_icon = '',
 		modified_icon = '●',
@@ -26,8 +23,8 @@ require'bufferline'.setup{
 	},
 	highlights = {
 		fill = {
-			guifg = {attribute = "fg", highlight = "Normal"},
-			guibg = {attribute = "bg", highlight = "StatusLineNC"},
+			guifg = "#3881ff",
+			guibg = "#373737",
 		},
 		background = {
 			guifg = {attribute = "fg", highlight = "Normal"},
@@ -35,25 +32,27 @@ require'bufferline'.setup{
 		},
 		buffer_visible = {
 			gui = "NONE",
-			guifg = {attribute = "fg", highlight="Normal"},
-			guibg = {attribute = "bg", highlight = "Normal"}
+
+			guifg = "#464646",
+			guibg = "#464646"
 		},
 		buffer_selected = {
 			gui = "NONE",
-			guifg = {attribute = "fg", highlight="Normal"},
-			guibg = {attribute = "bg", highlight = "Normal"}
+			guifg = "#fff",
+			guibg = "#fff"
 		},
 		separator = {
-			guifg = {attribute = "bg", highlight = "Normal"},
-			guibg = {attribute = "bg", highlight = "StatusLine"},
+			guifg = "#373737",
+			guibg = "#272822"
 		},
+		--#272822
 		separator_selected = {
-			guifg = {attribute = "fg", highlight="Special"},
-			guibg = {attribute = "bg", highlight = "Normal"}
+			guifg = "#373737",
+			guibg = "#272822"
 		},
 		separator_visible = {
-			guifg = {attribute = "fg", highlight = "Normal"},
-			guibg = {attribute = "bg", highlight = "StatusLineNC"},
+			guifg = "#373737",
+			guibg = "#272822"
 		},
 		close_button = {
 			guifg = {attribute = "fg", highlight = "Normal"},

@@ -3,6 +3,7 @@ local vscode = require("vscode")
 vscode.set()
 EOF
 
+" NvimTree
 highlight NvimTreeSymlink              gui=NONE guifg=LightGray guibg=LightGray
 highlight NvimTreeFolderIcon           gui=NONE guifg=#0074c1 guibg=#fff
 highlight NvimTreeFolderName           gui=NONE guifg=LightGray

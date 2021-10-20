@@ -49,7 +49,20 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-local servers = {"tsserver", "graphql", "clangd", "cmake", "pylsp", "sqlls", "intelephense"}
+local servers = {
+	"tsserver",
+	"graphql",
+	"clangd",
+	"cmake",
+	"pylsp",
+	"sqlls",
+	"intelephense",
+	"vuels",
+	"angularls",
+	"cssls",
+	"html",
+	"jsonls"
+}
 for _, lsp in ipairs(servers) do
 	lsp_config[lsp].setup {
 		on_attach = lsp_completion.on_attach,

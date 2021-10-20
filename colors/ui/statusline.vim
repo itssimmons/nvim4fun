@@ -1,6 +1,6 @@
 let g:lightline = {
-\ 'enable': { 'statusline': 1, 'tabline': 0 }, 
-\ 'active': { 
+\ 'enable': { 'statusline': 1, 'tabline': 0 },
+\ 'active': {
 \  'left': [['mode', 'paste'], ['linter_errors', 'linter_warnings', 'linter_ok']],
 \  'right': [['myfiletype'], ['lineinfo', 'percent'], ['gitbranch']]
 \  },
@@ -20,7 +20,7 @@ let g:lightline = {
 \  'linter_errors': 'lightline#ale#errors',
 \  'linter_ok': 'lightline#ale#ok'
 \ },
-\ 'colorscheme': 'pinkple',
+\ 'colorscheme': 'purpledepth',
 \ 'subseparator': {
 \  'left': '',
 \  'right': ''

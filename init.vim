@@ -2,7 +2,6 @@
 call plug#begin('~\.vim\plugged')
 " LSP
 Plug 'neovim/nvim-lspconfig'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'glepnir/lspsaga.nvim'
 Plug 'nvim-lua/completion-nvim'
 Plug 'folke/trouble.nvim'
@@ -21,7 +20,7 @@ Plug 'chrisbra/Colorizer'
 Plug 'jiangmiao/auto-pairs'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'prettier/vim-prettier', {
-\ 'do': 'npm install',
+\ 'do': 'yarn install',
 \ 'branch': 'release/0.x'
 \ }
 " Git
@@ -42,8 +41,14 @@ Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 " }
 
-let g:vscode_style = "dark"
-colorscheme vscode
+" VSCode colorscheme
+"let g:vscode_style = "dark"
+"colorscheme vscode
+
+" Sublime Text colorscheme
+syntax on
+colorscheme sublimemonokai
+let g:sublimemonokai_term_italic = 1
 
 " { Sources
 
