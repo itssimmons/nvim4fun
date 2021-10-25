@@ -6,7 +6,7 @@ local on_attach = function(client, bufnr)
 	buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
 	-- Mappings.
-	local opts = { noremap=true, silent=true }
+	local opts = { noremap = true, silent = true }
 
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
 	buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
@@ -26,15 +26,30 @@ local on_attach = function(client, bufnr)
 	--buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
 	--buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
 	--buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-
 end
 
--- Column Signs
-local signs = { Error = "", Warning = "", Hint = "", Information = "" }
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+   virtual_text = {
+      prefix = "",
+      spacing = 0,
+   },
+   signs = true,
+   underline = true,
+   update_in_insert = false, -- update diagnostics insert mode
+})
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+   border = "single",
+})
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+   border = "single",
+})
+
+-- Replace the default lsp diagnostic symbols
+local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
 
 for type, icon in pairs(signs) do
-	local hl = "LspDiagnosticsSign" .. type
-	vim.fn.sign_define(hl, { text = "", texthl = hl, numhl = "" })
+  local hl = "LspDiagnosticsSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
 -- { LSP set up
@@ -47,22 +62,25 @@ local on_attach = function(client, bufnr)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.documentationFormat = { "markdown", "plaintext" }
 capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-local servers = {
-	"tsserver",
-	"graphql",
-	"clangd",
-	"cmake",
-	"pylsp",
-	"sqlls",
-	"intelephense",
-	"vuels",
-	"angularls",
-	"cssls",
-	"html",
-	"jsonls"
+capabilities.textDocument.completion.completionItem.preselectSupport = true
+capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
+capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
+capabilities.textDocument.completion.completionItem.deprecatedSupport = true
+capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
+capabilities.textDocument.completion.completionItem.tagSupport = { valueSet = { 1 } }
+capabilities.textDocument.completion.completionItem.resolveSupport = {
+   properties = {
+      "documentation",
+      "detail",
+      "additionalTextEdits",
+   },
 }
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+local servers = { "tsserver", "graphql", "clangd", "cmake", "pylsp", "sqlls", "intelephense", "vuels", "angularls", "css-ls", "html-ls" }
+
 for _, lsp in ipairs(servers) do
 	lsp_config[lsp].setup {
 		on_attach = lsp_completion.on_attach,
@@ -73,3 +91,15 @@ for _, lsp in ipairs(servers) do
 	}
 end
 -- }
+
+-- Suppers errors from lang servers
+vim.notify = function(msg, log_level, _opts)
+   if msg:match "exit code" then
+      return
+   end
+   if log_level == vim.log.levels.ERROR then
+      vim.api.nvim_err_writeln(msg)
+   else
+      vim.api.nvim_echo({ { msg } }, true, {})
+   end
+end
