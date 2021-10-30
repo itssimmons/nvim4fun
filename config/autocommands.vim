@@ -5,6 +5,12 @@ autocmd filetype cpp nnoremap <F5> :w <bar> !g++ -std=c++2a % -o %:r && %:r.exe 
 autocmd filetype python nnoremap <F5> :w <bar> !python % <CR>
 autocmd filetype scss,sass nnoremap <F5> :w <bar> !sass % %:r.css <CR>
 " }
+"
+
+" { Indentified tsx
+au BufNewFile,BufRead *.ts setlocal filetype=typescript
+au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
+" }
 
 " Do not use smart case in command line mode,
 " extracted from https://goo.gl/vCTYdK

@@ -66,7 +66,7 @@ nmap <C-t> :e! %:h/
 nmap <C-w> :bdelete!<CR>
 
 " Alternate way to save
-nnoremap <C-s> :w<CR>
+nnoremap <C-s> :w!<CR>
 
 " Alternate way to quit
 nnoremap <C-x> :xa!<CR>

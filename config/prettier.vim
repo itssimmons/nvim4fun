@@ -1,9 +1,10 @@
-" Autoformat
+" Auto-format
 "let g:prettier#autoformat = 0
 "autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html,*.xml Prettier
-" Manual format
-nnoremap <leader>p :Prettier<CR>
-nnoremap <leader>P :PrettierCli<CR>
+
+" Manual-format
+nnoremap <leader>P :Prettier<CR>
+nnoremap <leader>Pc :PrettierCli<CR>
 
 " Stylesheets prettier
 au FileType css,scss,sass,less let b:prettier_exec_cmd = "prettier-stylelint"
@@ -22,7 +23,7 @@ let g:prettier#config#jsx_bracket_same_line = 'false'
 let g:prettier#config#arrow_parens = 'avoid'
 let g:prettier#config#trailing_comma = 'es5'
 " flow|babylon|typescript|css|less|scss|json|graphql|markdown or empty string
-let g:prettier#config#parser = 'flow'
+let g:prettier#config#parser = 'typescript'
 " cli-override|file-override|prefer-file
 let g:prettier#config#config_precedence = 'cli-override'
 " always|never|preserve

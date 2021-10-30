@@ -1,24 +1,22 @@
 " { Plugins
 call plug#begin('~\.vim\plugged')
 " LSP
-Plug 'neovim/nvim-lspconfig'
-Plug 'glepnir/lspsaga.nvim'
-Plug 'nvim-lua/completion-nvim'
-Plug 'folke/trouble.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "VS Code
-Plug 'mhinz/vim-startify'
 Plug 'szw/vim-maximizer'
 Plug 'christoomey/vim-tmux-navigator'
+
 Plug 'kyazdani42/nvim-tree.lua'
-Plug 'ryanoasis/vim-devicons'
-Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/nvim-bufferline.lua'
 Plug 'hoob3rt/lualine.nvim'
-Plug 'easymotion/vim-easymotion'
+
+Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
+
 Plug 'scrooloose/nerdcommenter'
 Plug 'chrisbra/Colorizer'
-Plug 'jiangmiao/auto-pairs'
 Plug 'terryma/vim-multiple-cursors'
+
 Plug 'prettier/vim-prettier', {
 \ 'do': 'yarn install',
 \ 'branch': 'release/0.x'
@@ -29,10 +27,9 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'nvim-treesitter/playground'
 " Snippets
+Plug 'easymotion/vim-easymotion'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 " Debugger
 Plug 'puremourning/vimspector'
 " Telescope
@@ -42,13 +39,13 @@ call plug#end()
 " }
 
 " VSCode colorscheme
-"let g:vscode_style = "dark"
-"colorscheme vscode
+let g:vscode_style = "dark"
+colorscheme vscode
 
 " Sublime Text colorscheme
-syntax on
-colorscheme sublimemonokai
-let g:sublimemonokai_term_italic = 1
+"syntax on
+"colorscheme sublimemonokai
+"let g:sublimemonokai_term_italic = 1
 
 " { Sources
 
@@ -61,9 +58,9 @@ source $LOCALAPPDATA\nvim\keys\mappings.vim
 source $LOCALAPPDATA\nvim\config\settings.vim
 source $LOCALAPPDATA\nvim\config\prettier.vim
 source $LOCALAPPDATA\nvim\config\autocommands.vim
-source $LOCALAPPDATA\nvim\config\lsp-config.vim
 source $LOCALAPPDATA\nvim\config\plugs-config.vim
+source $LOCALAPPDATA\nvim\config\coc-config.vim
 source $LOCALAPPDATA\nvim\config\bufferline.lua
-source $LOCALAPPDATA\nvim\config\lualine.lua
 source $LOCALAPPDATA\nvim\config\luatree.vim
+source $LOCALAPPDATA\nvim\config\lualine.lua
 " }
