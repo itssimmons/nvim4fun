@@ -1,20 +1,32 @@
 vim.opt.termguicolors = true
--- Buffer line setup
-require'bufferline'.setup {
+require'bufferline'.setup{
 	options = {
 		indicator_icon = ' ',
 		buffer_close_icon = '',
 		modified_icon = '●',
 		close_icon = '',
-		close_command = "Bdelete %d",
-		right_mouse_command = "Bdelete! %d",
+		close_command = "bdelete! %d",
+		right_mouse_command = "bdelete! %d",
 		left_trunc_marker = '',
 		right_trunc_marker = '',
 		offsets = {{filetype = "NvimTree", text = "EXPLORER", text_align = "center"}},
 		show_tab_indicators = true,
-		show_close_icon = false
+		max_name_length = 18,
+    max_prefix_length = 15,
+    tab_size = 20,
+    diagnostics = "coc",
+    diagnostics_update_in_insert = false,
+    diagnostics_indicator = function(count, level, diagnostics_dict, context)
+      return "("..count..")"
+    end,
+		show_close_icon = false,
+    separator_style = {"|", "|"},
 	},
 	highlights = {
+		fill = {
+			guifg = {attribute = "fg", highlight = "Normal"},
+			guibg = {attribute = "bg", highlight = "StatusLineNC"},
+		},
 		background = {
 			guifg = {attribute = "fg", highlight = "Normal"},
 			guibg = {attribute = "bg", highlight = "StatusLine"}

@@ -81,16 +81,8 @@ local function ins_right(component)
 end
 
 ins_left {
-  function()
-    return '▊'
-  end,
-  color = { fg = colors.blue }, -- Sets highlighting of component
-  padding = { left = 0, right = 1 }, -- We don't need space before this
-}
-
-ins_left {
   'branch',
-  icon = '',
+  icon = '',
   condition = conditions.check_git_workspace,
   color = {fg = colors.white, gui = 'NONE'}
 }
@@ -98,13 +90,12 @@ ins_left {
   'diagnostics',
   sources = {'coc'},
   symbols = {error = ' ', warn = ' ', info = ' '},
-  color_error = colors.white,
+  color_error = { fg = colors.white, gui = 'NONE' },
   color_warn = colors.white,
   color_info = colors.white
 }
 ins_left {
-	'mode',
-	color = {fg = colors.white, gui = 'bold'}
+	"mode"
 }
 
 -- Add components to right sections

@@ -4,7 +4,7 @@
 	"diagnostic.warningSign": "",
 	"diagnostic.infoSign": "",
 	"diagnostic.enableMessage": "jump",
-	"diagnostic.virtualText": true,
+	"diagnostic.virtualText": false,
 	"diagnostic.virtualTextCurrentLineOnly": false,
 	"suggest.noselect": true,
 	"suggest.enablePreselect": true,
