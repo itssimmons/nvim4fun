@@ -1,6 +1,5 @@
 let g:coc_global_extensions = [
 \ 'coc-tsserver',
-\ 'coc-graphql',
 \ 'coc-sql',
 \ 'coc-json',
 \ 'coc-css',
@@ -8,7 +7,6 @@ let g:coc_global_extensions = [
 \ 'coc-python',
 \ 'coc-phpls',
 \ 'coc-tabnine',
-\ 'coc-tslint',
 \ 'coc-webpack',
 \ 'coc-snippets',
 \ 'coc-pairs',
@@ -54,6 +52,8 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+let g:coc_snippet_next = '<tab>'
 
 " Use <c-space> to trigger completion.
 if has('nvim')
@@ -166,3 +166,4 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+

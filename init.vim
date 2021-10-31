@@ -30,6 +30,7 @@ Plug 'nvim-treesitter/playground'
 Plug 'easymotion/vim-easymotion'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
+Plug 'honza/vim-snippets'
 " Debugger
 Plug 'puremourning/vimspector'
 " Telescope

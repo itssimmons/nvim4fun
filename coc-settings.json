@@ -1,26 +1,40 @@
 {
-"suggest.completionItemKindLabels": {
-    "variable": "\uf71b",
-    "constant": "\uf8ff",
-    "struct": "\ufb44",
-    "class": "\uf0e8",
-    "interface": "\ufa52",
-    "text": "\ue612",
-    "enum": "\uf435",
-    "enumMember": "\uf02b",
-    "color": "\ue22b",
-    "property": "\ufab6",
-    "field": "\uf93d",
-    "unit": "\uf475",
-    "file": "\uf471",
-    "value": "\uf8a3",
-    "event": "\ufacd",
-    "folder": "\uf115",
-    "keyword": "\uf893",
-    "snippet": "\uf64d",
-    "operator": "\uf915",
-    "reference": "\uf87a",
-    "typeParameter": "\uf278",
-    "default": "\uf29c"
-  }
+	"codeLens.enable": true,
+	"diagnostic.errorSign": "",
+	"diagnostic.warningSign": "",
+	"diagnostic.infoSign": "",
+	"diagnostic.enableMessage": "jump",
+	"diagnostic.virtualText": true,
+	"diagnostic.virtualTextCurrentLineOnly": false,
+	"suggest.noselect": true,
+	"suggest.enablePreselect": true,
+	"suggest.completionItemKindLabels": {
+		"keyword": "\uf1de", //  sliders
+		"variable": "\ue79b", //  isometric box
+		"value": "\uf89f", //  digits 123
+		"operator": "\u03a8", // Ψ greek letter psi
+		"constructor": "\uf0ad", //  wrench
+		"function": "\u0192", // ƒ latin small letter F
+		"reference": "\ufa46", // 渚 retweet symbol
+		"constant": "\uf8fe", //  greek letter pi
+		"method": "\uf09a", //  facebook "f"
+		"struct": "\ufb44", // פּ file tree
+		"class": "\uf0e8", //  hierarchy / site map
+		"interface": "\uf417", //  git commit / line interrupted by circle
+		"text": "\ue612", //  left-justified lines
+		"enum": "\uf02c", //  pair of tags
+		"enumMember": "\uf02b", //  tag
+		"module": "\uf40d", //  code file / page showing angle brackets
+		"color": "\ue22b", //  palette
+		"property": "\ue624", //  predator dots
+		"field": "\uf9be", // 料 left-justified sorted lines
+		"unit": "\uf475", //  negative-space ellipsis
+		"event": "\ufacd", // 鬒 clock alert / clock with exclamation mark
+		"file": "\uf15b", //  file / blank page
+		"folder": "\uf07b", //  folder
+		"snippet": "\ue60b", //  pair of curly braces
+		"typeParameter": "\uf728", //  file presentation box
+		"default": "\uf29c" //  question mark in circle
+	},
+	"snippets.userSnippetsDirectory": "~/AppData/Local/nvim/snippets"
 }
